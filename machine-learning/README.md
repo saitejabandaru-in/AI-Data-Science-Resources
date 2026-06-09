@@ -33,6 +33,10 @@ To master this temple, you must grasp optimization calculus, train deep networks
 *   **Neural Networks** are like a **chain of friends whispering to each other**. The first friend looks at an image (e.g., the letter "A") and whispers small clues to the next friend. The last friend in the chain guesses the letter. If they guess wrong, they pass the correction back along the line so everyone knows who to trust more next time (which is *backpropagation*).
 *   **Self-Attention (Transformers)** is how computers **focus on context**. In the sentence: *"The bank of the river was muddy,"* self-attention connects the word **bank** to **river** so the computer knows it means a muddy slope of land, not a financial money bank.
 *   **RAG (Retrieval-Augmented Generation)** is like taking an **open-book exam**. Instead of forcing a computer to answer questions purely from memory (which can make it write fake facts, i.e., *hallucinations*), it searches a library first, pulls out the most relevant pages, and uses those pages to write a correct answer.
+    
+    <p align="center">
+      <img src="../assets/ml_open_book_rag.png" width="380" alt="ML RAG open-book robot" />
+    </p>
 
 ---
 

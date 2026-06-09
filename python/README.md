@@ -32,9 +32,14 @@ To catalyze the Serpent's energy, you must construct type-safe OOP architectures
     *   **List (`[]`)**: A **grocery list**. You can add items, cross items off, and sort them, and the order they are in matters.
     *   **Tuple (`()`)**: A **treasure map coordinate** (e.g., Latitude and Longitude). Once it's written down, you can never change it (it is *immutable*).
     *   **Set (`{}`)**: A **bag of marbles**. All marbles must be unique colors (no duplicates allowed!), and they just jumble around in no particular order.
-    *   **Dictionary (`{:}`)**: A **phone book**. You look up a friend's name (the *Key*) to find their phone number (the *Value*).
+    *   **Dictionary (`{:}`)**: A **phone book** or a **treasure map key**. You look up a friend's name or a coordinate (the *Key*) to find their phone number or treasure chest (the *Value*).
+    
+    <p align="center">
+      <img src="../assets/python_treasure_map.png" width="450" alt="Python Dictionary Analogy Cartoon" />
+    </p>
+
 *   **Object-Oriented Programming (OOP)** is like building with **LEGO blueprints**. A **Class** is the paper instructions showing how to build a LEGO car. An **Object (Instance)** is the actual, physical LEGO car you build using those instructions.
-*   **Decorators** are like **wrapping paper**. You have a present (a function). A decorator wraps around the present, adding shiny wrapping paper and a nice bow (extra timing, logging, or security logic) without changing the actual present inside.
+*   **Decorators** are like **wrapping paper**. You have a present (a function). A decorator wraps around the present, adding shiny wrapping paper and a bow (extra timing, logging, or security logic) without changing the actual present inside.
 *   **Generators (`yield`)** are like a **slow water faucet**. Instead of filling a giant, heavy swimming pool with water all at once (which takes up all your RAM memory), a generator gives you one single drop of water at a time, only when you ask for it.
 
 ---
