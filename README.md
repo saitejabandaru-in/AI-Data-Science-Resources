@@ -114,11 +114,19 @@ Here is a curated compilation of the absolute best free courses, textbooks, data
 
 ---
 
-## 🎮 Interactive CLI Labs & Simulators
+## 🎮 Gamified Study Companion & Interactive CLI Labs
 
-This repository is designed to be fully hands-on! We have built three interactive command-line interface (CLI) utilities for you to run in your terminal. They require zero external dependencies to execute!
+This repository isn't just text—it is an **interactive learning game**! Run the companion RPG or our dedicated scientific labs directly in your terminal with zero external dependencies required.
 
-### 1. 🎓 AI & Data Science Quiz CLI & Certification
+### ⚔️ 1. AI & Data Science Study Quest RPG
+Track your learning progress as a role-playing game! Complete quests, earn XP, level up, check in daily, and climb the leaderboard alongside famous AI pioneers.
+*   **Run command:**
+    ```bash
+    python3 scripts/study_quest.py
+    ```
+*   **Features:** Progress saving (`.study_quest.json`), Quest board mapped to our study modules, knowledge check-in milestones, and achievements.
+
+### 2. 🎓 AI & Data Science Quiz CLI & Certification
 Test your knowledge with conceptual multiple-choice questions on SQL, Python, and Machine Learning.
 *   **Run command:**
     ```bash
@@ -127,7 +135,7 @@ Test your knowledge with conceptual multiple-choice questions on SQL, Python, an
 *   **Features:** Score tracking, randomized orders, and immediate detailed conceptual answers.
 *   **🎓 Earn a LinkedIn Badge:** Scoring 8/9 or higher prompts the generator to create a personalized, modern SVG badge (`AI_Data_Science_Badge.svg`) and a verification document (`CERTIFICATE.md`) directly in your repository folder, along with a click-to-add link to showcase your certification on LinkedIn!
 
-### 2. ⚡ Scientific Computing Performance Lab
+### 3. ⚡ Scientific Computing Performance Lab
 Compare execution times between traditional Python loops, Pandas `.apply()`, Pandas vectorized arithmetic, and Polars. See Rust performance in action!
 *   **Run command:**
     ```bash
@@ -135,7 +143,7 @@ Compare execution times between traditional Python loops, Pandas `.apply()`, Pan
     ```
 *   **Features:** Simulates 100,000 transaction rows and builds a real-time execution speeds leaderboard.
 
-### 3. 🧠 Visual Neural Network Perceptron Simulator
+### 4. 🧠 Visual Neural Network Perceptron Simulator
 Watch a single artificial neuron learn logical gates (AND/OR) right in your terminal.
 *   **Run command:**
     ```bash
