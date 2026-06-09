@@ -2,6 +2,8 @@
 import sys
 import random
 import argparse
+import datetime
+import urllib.parse
 
 # Define the question bank
 QUESTIONS = [
@@ -118,6 +120,100 @@ QUESTIONS = [
     }
 ]
 
+def generate_svg_badge(name, date_str):
+    """Generates a beautiful personalized SVG certificate badge."""
+    svg_content = f"""<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Dark Blue Premium Background -->
+    <rect width="600" height="400" fill="#1C2B36" rx="15" />
+    
+    <!-- Outer Border -->
+    <rect x="15" y="15" width="570" height="370" fill="none" stroke="#F59E0B" stroke-width="3" rx="10" />
+    <!-- Inner Fine Border -->
+    <rect x="22" y="22" width="556" height="356" fill="none" stroke="#F59E0B" stroke-width="1" rx="8" opacity="0.6"/>
+
+    <!-- Decorative Top Accent -->
+    <path d="M 270 23 L 330 23 L 300 40 Z" fill="#F59E0B" />
+    
+    <!-- Header Title -->
+    <text x="300" y="70" font-family="'Inter', 'Helvetica', sans-serif" font-size="20" fill="#E6EEF3" font-weight="bold" text-anchor="middle" letter-spacing="3">CERTIFICATE OF COMPLETION</text>
+    
+    <text x="300" y="110" font-family="'Inter', 'Helvetica', sans-serif" font-size="14" fill="#9CA3AF" text-anchor="middle">This is proudly presented to</text>
+    
+    <!-- Recipient Name -->
+    <text x="300" y="160" font-family="'Inter', 'Helvetica', sans-serif" font-size="28" fill="#F59E0B" font-weight="bold" text-anchor="middle" letter-spacing="1">{name}</text>
+    
+    <line x1="150" y1="180" x2="450" y2="180" stroke="#F59E0B" stroke-width="1" opacity="0.4" />
+    
+    <!-- Course Description -->
+    <text x="300" y="220" font-family="'Inter', 'Helvetica', sans-serif" font-size="14" fill="#E6EEF3" text-anchor="middle">For successfully mastering the core modules of</text>
+    <text x="300" y="245" font-family="'Inter', 'Helvetica', sans-serif" font-size="16" fill="#E6EEF3" font-weight="bold" text-anchor="middle">SQL, Python, &amp; Machine Learning Curriculum</text>
+    
+    <!-- Details & Verification -->
+    <text x="75" y="315" font-family="'Inter', 'Helvetica', sans-serif" font-size="11" fill="#9CA3AF" text-anchor="start">ISSUED BY:</text>
+    <text x="75" y="335" font-family="'Inter', 'Helvetica', sans-serif" font-size="12" fill="#E6EEF3" font-weight="bold" text-anchor="start">AI &amp; Data Science Resources</text>
+    
+    <text x="525" y="315" font-family="'Inter', 'Helvetica', sans-serif" font-size="11" fill="#9CA3AF" text-anchor="end">DATE COMPLETED:</text>
+    <text x="525" y="335" font-family="'Inter', 'Helvetica', sans-serif" font-size="12" fill="#E6EEF3" font-weight="bold" text-anchor="end">{date_str}</text>
+    
+    <!-- Decorative Stamp Graphic -->
+    <circle cx="300" cy="315" r="28" fill="#F59E0B" opacity="0.1" />
+    <circle cx="300" cy="315" r="24" fill="none" stroke="#F59E0B" stroke-dasharray="4" stroke-width="1.5" />
+    <text x="300" y="319" font-family="'Inter', 'Helvetica', sans-serif" font-size="9" fill="#F59E0B" font-weight="bold" text-anchor="middle">VERIFIED</text>
+</svg>"""
+    try:
+        with open("AI_Data_Science_Badge.svg", "w", encoding="utf-8") as f:
+            f.write(svg_content)
+        print("\n🎨 Generated a personalized SVG badge: [AI_Data_Science_Badge.svg](file://AI_Data_Science_Badge.svg)")
+    except Exception as e:
+        print(f"\n⚠️ Could not save SVG badge file: {e}")
+
+def generate_markdown_certificate(name, date_str):
+    """Generates a CERTIFICATE.md file for the user."""
+    cert_content = f"""# 🏆 Certificate of Completion
+
+Presented to: **{name}**  
+Date of Achievement: **{date_str}**
+
+---
+
+### 🎓 Modules Mastered
+- **Advanced SQL Database Systems:** Logical Execution Order, Window Functions, Query Optimization.
+- **Python & High-Performance Data Engineering:** Functional Decorators, Generators, Vectorization pipelines (Pandas & Polars).
+- **Core Machine Learning & Deep Architectures:** Statistical Math, Tree-based Ensembles, Gradient Descent, Transformers, and Retrieval-Augmented Generation (RAG).
+
+### 🛡️ Verified Achievement
+This certificate verifies successful completion of the comprehensive technical examination hosted at [saitejabandaru-in/AI-Data-Science-Resources](https://github.com/saitejabandaru-in/AI-Data-Science-Resources).
+
+---
+<div align="center">
+  <img src="AI_Data_Science_Badge.svg" width="500" alt="Certificate Badge" />
+</div>
+"""
+    try:
+        with open("CERTIFICATE.md", "w", encoding="utf-8") as f:
+            f.write(cert_content)
+        print("📝 Created your verification document: [CERTIFICATE.md](file://CERTIFICATE.md)")
+    except Exception as e:
+        print(f"⚠️ Could not save Markdown Certificate file: {e}")
+
+def print_ascii_certificate(name):
+    """Prints a beautiful ASCII art certificate border."""
+    border = "║"
+    width = 65
+    print("\n" + "╔" + "═"*(width) + "╗")
+    print(f"{border}{'':^{width}}{border}")
+    print(f"{border}{'🏆  CERTIFICATE OF ACHIEVEMENT  🏆':^{width}}{border}")
+    print(f"{border}{'':^{width}}{border}")
+    print(f"{border}{'This is proudly presented to:':^{width}}{border}")
+    print(f"{border}{name.upper():^{width}}{border}")
+    print(f"{border}{'':^{width}}{border}")
+    print(f"{border}{'For successfully completing the comprehensive examination':^{width}}{border}")
+    print(f"{border}{'SQL, Python, and Machine Learning Curriculum':^{width}}{border}")
+    print(f"{border}{'':^{width}}{border}")
+    print(f"{border}{'AI & DATA SCIENCE RESOURCES':^{width}}{border}")
+    print(f"{border}{'':^{width}}{border}")
+    print("╚" + "═"*(width) + "╝")
+
 def run_quiz(category=None):
     # Filter questions if a category is specified
     if category and category.lower() != "all":
@@ -140,7 +236,6 @@ def run_quiz(category=None):
         print(f"Question {idx}/{len(questions)} [{q['category']}]:")
         print(f"{q['question']}\n")
         
-        # Sort keys to ensure A, B, C, D ordering
         for key in sorted(q["options"].keys()):
             print(f"  [{key}] {q['options'][key]}")
         
@@ -174,7 +269,41 @@ def run_quiz(category=None):
         print("=" * 60 + "\n")
 
     print(f"🏆 Quiz Finished! Final Score: {score}/{len(questions)} ({score/len(questions)*100:.1f}%)")
-    print("Keep learning!\n")
+    
+    # Check if they passed (score >= 8 out of 9)
+    if score >= 8:
+        print("\n🌟 CONGRATULATIONS! You have passed the certification requirements! 🌟")
+        try:
+            name = input("Enter your name for the certificate: ").strip()
+        except (KeyboardInterrupt, EOFError):
+            name = "Graduate"
+        if not name:
+            name = "Graduate"
+            
+        date_str = datetime.date.today().strftime("%B %d, %Y")
+        
+        # Print and generate certificate files
+        print_ascii_certificate(name)
+        generate_svg_badge(name, date_str)
+        generate_markdown_certificate(name, date_str)
+        
+        # Generate LinkedIn parameters
+        encoded_name = urllib.parse.quote_plus("AI & Data Science Core Curriculum")
+        encoded_org = urllib.parse.quote_plus("AI Data Science Resources")
+        encoded_url = urllib.parse.quote_plus("https://github.com/saitejabandaru-in/AI-Data-Science-Resources")
+        
+        linkedin_add_url = f"https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name={encoded_name}&organizationName={encoded_org}&certUrl={encoded_url}"
+        linkedin_share_url = f"https://www.linkedin.com/sharing/share-offsite/?url={encoded_url}"
+        
+        print("\n💼 SHARE YOUR ACHIEVEMENT ON LINKEDIN!")
+        print("1. Add to LinkedIn Profile Certifications:")
+        print(f"   👉 {linkedin_add_url}")
+        print("2. Post a Share Announcement:")
+        print(f"   👉 {linkedin_share_url}")
+        print("\nNote: Make sure to commit the generated files to show your badge in your repo!")
+    else:
+        print("\n💡 You need at least 8 correct answers to earn the Certificate & LinkedIn Badge. Run again to retry!")
+    print("\nKeep learning!\n")
 
 def main():
     parser = argparse.ArgumentParser(description="Run an interactive AI and Data Science quiz in the terminal.")
@@ -186,7 +315,6 @@ def main():
     )
     args = parser.parse_args()
     
-    # Map 'ml' to 'machine learning' in logic
     cat = "Machine Learning" if args.category == "ml" else args.category
     run_quiz(cat)
 

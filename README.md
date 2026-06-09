@@ -118,13 +118,14 @@ Here is a curated compilation of the absolute best free courses, textbooks, data
 
 This repository is designed to be fully hands-on! We have built three interactive command-line interface (CLI) utilities for you to run in your terminal. They require zero external dependencies to execute!
 
-### 1. 🎓 AI & Data Science Quiz CLI
+### 1. 🎓 AI & Data Science Quiz CLI & Certification
 Test your knowledge with conceptual multiple-choice questions on SQL, Python, and Machine Learning.
 *   **Run command:**
     ```bash
     python3 scripts/quiz_generator.py
     ```
 *   **Features:** Score tracking, randomized orders, and immediate detailed conceptual answers.
+*   **🎓 Earn a LinkedIn Badge:** Scoring 8/9 or higher prompts the generator to create a personalized, modern SVG badge (`AI_Data_Science_Badge.svg`) and a verification document (`CERTIFICATE.md`) directly in your repository folder, along with a click-to-add link to showcase your certification on LinkedIn!
 
 ### 2. ⚡ Scientific Computing Performance Lab
 Compare execution times between traditional Python loops, Pandas `.apply()`, Pandas vectorized arithmetic, and Polars. See Rust performance in action!
