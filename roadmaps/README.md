@@ -1,6 +1,6 @@
 # 🛤️ Data Science & AI Roadmaps
 
-<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing -->
+<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -15,6 +15,7 @@
   "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/roadmaps"
 }
 </script>
+-->
 
 Detailed milestone roadmaps for three major industry roles: Machine Learning Engineer, Data Scientist, and Data Analyst.
 

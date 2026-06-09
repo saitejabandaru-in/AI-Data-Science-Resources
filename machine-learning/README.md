@@ -1,6 +1,6 @@
 # 🧠 Machine Learning & Deep Learning Notes
 
-<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing -->
+<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -15,6 +15,7 @@
   "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/machine-learning"
 }
 </script>
+-->
 
 A comprehensive guide from statistical machine learning foundations to deep neural architectures and state-of-the-art Generative AI (LLMs, RAG).
 

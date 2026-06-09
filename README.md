@@ -2,7 +2,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4F7CAC,100:1C2B36&height=220&section=header&text=AI%20Data%20Science%20Resources&fontSize=38&fontColor=E6EEF3&animation=fadeIn&fontAlignY=35&desc=Theory%20•%20Coding%20•%20Quizzes%20•%20Interviews%20•%20Roadmaps&descAlignY=55" />
 </p>
 
-<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing -->
+<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -18,6 +18,7 @@
   "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources"
 }
 </script>
+-->
 
 <div align="center">
 

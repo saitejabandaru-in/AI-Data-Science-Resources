@@ -1,6 +1,6 @@
 # 🐍 Python & Scientific Computing
 
-<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing -->
+<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -15,6 +15,7 @@
   "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/python"
 }
 </script>
+-->
 
 Python is the lingua franca of data engineering, machine learning, and AI research. This module details core language concepts, Object-Oriented Programming (OOP), advanced execution patterns, and performance tuning techniques for large-scale data manipulation.
 
