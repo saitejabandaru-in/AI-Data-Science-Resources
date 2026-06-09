@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI & Data Science Grand Archive — Web Companion</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Glow Accents -->
+  <div class="glow-accent blue" style="top: -10%; left: -10%;"></div>
+  <div class="glow-accent green" style="bottom: -10%; right: -10%;"></div>
+
+  <div class="app-container">
+    <!-- Header Banner -->
+    <header class="app-header">
+      <div class="header-logo">
+        <span class="shield-icon">🛡️</span>
+        <div class="header-text">
+          <h1>AI & DATA SCIENCE</h1>
+          <p>THE GRAND ARCHIVE COMPANION</p>
+        </div>
+      </div>
+      <div class="stats-badge">
+        <span class="badge-label">CLASS:</span>
+        <span class="badge-value">Data Initiate</span>
+        <span class="badge-divider">|</span>
+        <span class="badge-label">LEVEL:</span>
+        <span class="badge-value" id="user-level">1</span>
+        <span class="badge-divider">|</span>
+        <span class="badge-label">XP:</span>
+        <span class="badge-value" id="user-xp">0 XP</span>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="app-nav">
+      <button class="nav-tab active" data-tab="dashboard">
+        <span class="tab-icon">🏠</span> Dashboard
+      </button>
+      <button class="nav-tab" data-tab="quiz">
+        <span class="tab-icon">🎓</span> Quiz Arena
+      </button>
+      <button class="nav-tab" data-tab="neuralnet">
+        <span class="tab-icon">🧠</span> Neural Net Lab
+      </button>
+      <button class="nav-tab" data-tab="benchmarks">
+        <span class="tab-icon">📊</span> Benchmarks
+      </button>
+      <button class="nav-tab" data-tab="author">
+        <span class="tab-icon">👤</span> Author Profile
+      </button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+
+      <!-- TAB 1: DASHBOARD -->
+      <section class="tab-content active" id="tab-dashboard">
+        <div class="welcome-card card">
+          <h2>⚔️ Welcome, Initiate, to the Grand Archive!</h2>
+          <p>This interactive web companion matches the terminal games and guides in your local repository. Click through the labs above to test your skills in the **Quiz Arena**, simulate training a neuron in the **Neural Net Lab**, or check computational performance in the **Benchmark Lab**.</p>
+        </div>
+
+        <div class="dashboard-grid">
+          <!-- Quest Board -->
+          <div class="quest-board-card card">
+            <h3>⚔️ The Quest Board: Six Paths to Mastery</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Quest</th>
+                    <th>Name</th>
+                    <th>Difficulty</th>
+                    <th>XP Reward</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Quest 1</strong></td>
+                    <td>The Gates of Query Haven (SQL)</td>
+                    <td><span class="difficulty-pill easy">Easy</span></td>
+                    <td><code>150 XP</code></td>
+                    <td><span class="status-pill completed">Completed</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Quest 2</strong></td>
+                    <td>The Serpent's Catalyst (Python)</td>
+                    <td><span class="difficulty-pill medium">Medium</span></td>
+                    <td><code>250 XP</code></td>
+                    <td><span class="status-pill completed">Completed</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Quest 3</strong></td>
+                    <td>The Cathedral of Learning (ML)</td>
+                    <td><span class="difficulty-pill hard">Hard</span></td>
+                    <td><code>500 XP</code></td>
+                    <td><span class="status-pill in-progress">In Progress</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Quest 4</strong></td>
+                    <td>The Colosseum of Interviews</td>
+                    <td><span class="difficulty-pill hard">Hard</span></td>
+                    <td><code>400 XP</code></td>
+                    <td><span class="status-pill locked">Locked</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Quest 5</strong></td>
+                    <td>The Scroll of Seminal Whispers</td>
+                    <td><span class="difficulty-pill medium">Medium</span></td>
+                    <td><code>200 XP</code></td>
+                    <td><span class="status-pill locked">Locked</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Quest 6</strong></td>
+                    <td>The Cartographer's Guild</td>
+                    <td><span class="difficulty-pill easy">Easy</span></td>
+                    <td><code>100 XP</code></td>
+                    <td><span class="status-pill locked">Locked</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Quick Actions & Stats -->
+          <div class="sidebar-column">
+            <div class="stats-card card">
+              <h3>🏆 Player Achievement Stats</h3>
+              <div class="progress-bar-container">
+                <div class="progress-label">
+                  <span>Overall Curriculum Progress</span>
+                  <span id="curriculum-percent">33%</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill" style="width: 33%;"></div>
+                </div>
+              </div>
+              <ul class="stats-list">
+                <li><span>Database Mastered:</span> <span class="text-green">Yes ✅</span></li>
+                <li><span>Python Optimized:</span> <span class="text-green">Yes ✅</span></li>
+                <li><span>Neural Networks Trained:</span> <span class="text-orange" id="nn-status">Not Yet ❌</span></li>
+                <li><span>Quiz Score Record:</span> <span id="quiz-record">N/A</span></li>
+              </ul>
+            </div>
+
+            <div class="hiker-map-card card">
+              <h3>🧭 Hiker Quest Map</h3>
+              <div class="map-container">
+                <img src="../assets/hiker_quest_map.png" alt="Hiker Quest Treasure Map" class="responsive-img" onerror="this.src='https://placehold.co/600x400/1C2B36/E6EEF3?text=Hiker+Quest+Map'"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: QUIZ ARENA -->
+      <section class="tab-content" id="tab-quiz">
+        <div class="card quiz-intro" id="quiz-intro-screen">
+          <h2>🎓 The Certification Arena</h2>
+          <p>Answer the 9 comprehensive questions spanning advanced SQL execution order, functional Python generators, and Deep Learning self-attention mechanics. Scoring **8 out of 9** or higher grants you your personalized badge and LinkedIn credential share link!</p>
+          <div class="cert-preview-container">
+            <img src="../assets/certificate_mockup.png" alt="Certificate Mockup" class="cert-preview-img" onerror="this.src='https://placehold.co/550x350/1C2B36/E6EEF3?text=Certificate+Preview'"/>
+          </div>
+          <button class="btn btn-primary btn-large" id="start-quiz-btn">⚔️ Enter the Arena</button>
+        </div>
+
+        <div class="card quiz-container" id="quiz-active-screen" style="display: none;">
+          <div class="quiz-header">
+            <span class="quiz-category-badge" id="quiz-category">SQL</span>
+            <span class="quiz-progress-text" id="quiz-q-counter">Question 1 of 9</span>
+          </div>
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quiz-bar-fill" style="width: 11%;"></div>
+          </div>
+          <h3 class="quiz-question" id="quiz-question-text">Question content goes here...</h3>
+          <div class="quiz-options" id="quiz-options-container">
+            <!-- Options dynamically added -->
+          </div>
+          <div class="explanation-box card" id="quiz-explanation-box" style="display: none;">
+            <p id="quiz-explanation-text">Explanation goes here...</p>
+          </div>
+          <div class="quiz-actions">
+            <button class="btn btn-secondary" id="quiz-exit-btn">Exit Arena</button>
+            <button class="btn btn-primary" id="quiz-next-btn" style="display: none;">Next Question ➡️</button>
+          </div>
+        </div>
+
+        <!-- Quiz Results Screen -->
+        <div class="card quiz-results" id="quiz-result-screen" style="display: none;">
+          <div class="results-header">
+            <h2 id="result-title">Quiz Finished!</h2>
+            <p id="result-subtitle">You scored 5/9 (55.6%)</p>
+          </div>
+
+          <div class="success-actions" id="result-pass-actions" style="display: none;">
+            <div class="success-badge-display">
+              <span class="trophy-large">🏆</span>
+              <h3>Congratulations! You passed!</h3>
+              <p>You have earned the **AI & Data Science Curriculum Certificate**!</p>
+            </div>
+            
+            <div class="name-input-section">
+              <label for="student-name">Enter your name for the certificate:</label>
+              <div class="input-group">
+                <input type="text" id="student-name" placeholder="John Doe" value="Graduate"/>
+                <button class="btn btn-green" id="generate-web-cert-btn">Generate Certificate</button>
+              </div>
+            </div>
+
+            <div class="share-section" id="share-section-box" style="display: none;">
+              <h4>🔗 Share Your Verifiable Credentials</h4>
+              <div class="share-grid">
+                <a href="#" class="btn btn-linkedin" id="linkedin-add-badge-btn" target="_blank">💼 Add to LinkedIn Profile</a>
+                <a href="#" class="btn btn-secondary" id="linkedin-share-badge-btn" target="_blank">📢 Share Announcement</a>
+                <button class="btn btn-primary" id="download-cert-md-btn">📥 Download CERTIFICATE.md</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="fail-actions" id="result-fail-actions" style="display: none;">
+            <p>You need at least **8 correct answers** to pass and claim your certificate. Do not worry—review the guides and try again!</p>
+            <button class="btn btn-primary" id="retry-quiz-btn">🔄 Retry Quiz</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: NEURAL NET LAB -->
+      <section class="tab-content" id="tab-neuralnet">
+        <div class="nn-grid">
+          <!-- Simulation View -->
+          <div class="nn-sim-card card">
+            <h2>🧠 Visual Neural Network Training Lab</h2>
+            <p>Train a single Artificial Neuron (Perceptron) in real-time. The canvas below shows a binary classification dataset (red vs. blue points). Watch the neuron adjust its weight boundary line iteratively using gradient descent.</p>
+            
+            <div class="canvas-wrapper">
+              <canvas id="perceptron-canvas" width="500" height="400"></canvas>
+            </div>
+
+            <div class="canvas-legend">
+              <span class="legend-item"><span class="dot red-dot"></span> Class A</span>
+              <span class="legend-item"><span class="dot blue-dot"></span> Class B</span>
+              <span class="legend-item"><span class="line boundary-line"></span> Decision Boundary</span>
+            </div>
+          </div>
+
+          <!-- Controls panel -->
+          <div class="nn-controls-card card">
+            <h3>⚙️ Training Parameters</h3>
+            <div class="control-group">
+              <label for="nn-lr">Learning Rate (&eta;):</label>
+              <div class="slider-row">
+                <input type="range" id="nn-lr" min="0.001" max="0.5" step="0.005" value="0.1"/>
+                <span id="nn-lr-val">0.100</span>
+              </div>
+            </div>
+            
+            <div class="control-group">
+              <label for="nn-dataset">Dataset Type:</label>
+              <select id="nn-dataset">
+                <option value="linearly_separable">Linearly Separable (Easy)</option>
+                <option value="noisy_separable">Noisy Separable (Medium)</option>
+                <option value="non_separable">XOR/Circular (Impossible for Single Neuron)</option>
+              </select>
+            </div>
+
+            <div class="training-stats">
+              <div class="stat-box">
+                <span class="stat-label">Epochs:</span>
+                <span class="stat-value" id="nn-epochs">0</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">Accuracy:</span>
+                <span class="stat-value" id="nn-accuracy">0%</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">Loss:</span>
+                <span class="stat-value" id="nn-loss">0.00</span>
+              </div>
+            </div>
+
+            <div class="control-buttons">
+              <button class="btn btn-primary" id="nn-step-btn">👣 Single Step (1 Epoch)</button>
+              <button class="btn btn-green" id="nn-run-btn">🚀 Run Training (Auto)</button>
+              <button class="btn btn-secondary" id="nn-reset-btn">🔄 Reset weights</button>
+            </div>
+
+            <div class="analogy-callout">
+              <h4>💡 The Dog Trick Analogy</h4>
+              <p>A single neuron is like training a puppy. Every time it predicts correctly (points on the right side of the line), we leave weights alone. When it makes an error, we gently pull the leash (adjust the weights) in the direction of the correction, scaled by our learning rate.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: BENCHMARKS -->
+      <section class="tab-content" id="tab-benchmarks">
+        <div class="bench-layout card">
+          <h2>📊 Scientific Computing Performance Benchmarks</h2>
+          <p>Measure and visualize the computational efficiency of data manipulation engines. This lab charts the exact execution times for common operations (Group By, Filter, Join) across 1 Million Rows comparing Python loops, Pandas, and Rust-based Polars.</p>
+
+          <div class="bench-chart-container">
+            <canvas id="benchmark-chart" width="700" height="350"></canvas>
+          </div>
+
+          <div class="bench-grid">
+            <div class="bench-engine-card">
+              <h4 class="engine-title text-orange">🐍 Pure Python Loops</h4>
+              <ul class="engine-details">
+                <li><strong>Execution Time:</strong> ~2,400 ms</li>
+                <li><strong>Speed Index:</strong> 1x (Base)</li>
+                <li><strong>Implication:</strong> Single-threaded, bound by the GIL. Heavy CPU overhead for loops.</li>
+              </ul>
+            </div>
+            
+            <div class="bench-engine-card">
+              <h4 class="engine-title text-blue">🐼 Pandas (C-Optimized Vectors)</h4>
+              <ul class="engine-details">
+                <li><strong>Execution Time:</strong> ~120 ms</li>
+                <li><strong>Speed Index:</strong> 20x Faster</li>
+                <li><strong>Implication:</strong> Columnar numpy memory structures. Bypasses Python loops, but still single-threaded and eager.</li>
+              </ul>
+            </div>
+
+            <div class="bench-engine-card">
+              <h4 class="engine-title text-green">🦀 Polars (Rust Parallel Engine)</h4>
+              <ul class="engine-details">
+                <li><strong>Execution Time:</strong> ~8 ms</li>
+                <li><strong>Speed Index:</strong> 300x Faster</li>
+                <li><strong>Implication:</strong> Multi-threaded execution, lazy query plan optimization, and native Rust speed.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bench-action-section">
+            <p class="text-muted">Want to run these benchmarks locally with your actual hardware performance? Execute the script in your local workspace:</p>
+            <code>python3 scripts/benchmark_lab.py</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: AUTHOR PROFILE -->
+      <section class="tab-content" id="tab-author">
+        <div class="card author-outer-card">
+          <h2>👤 Meet the Author & Founder</h2>
+          <p class="text-muted">Explore research, academic publication portals, and professional channels.</p>
+          
+          <div class="author-embed-wrapper">
+            <img src="../assets/author_card.svg" alt="Sai Teja Bandaru Profile Card" class="author-card-svg-display" />
+          </div>
+
+          <div class="author-links-grid">
+            <h3>🔗 External Direct Links</h3>
+            <div class="author-buttons-container">
+              <a href="https://www.saitejabandaru.com/" class="badge-link web-badge" target="_blank">🌐 Website (saitejabandaru.com)</a>
+              <a href="mailto:Saitejaroyal2311@gmail.com" class="badge-link email-badge">✉ Email Contact</a>
+              <a href="https://www.linkedin.com/in/saitejabandaru-ds/" class="badge-link linkedin-badge" target="_blank">💼 LinkedIn Profile</a>
+              <a href="https://scholar.google.com/citations?user=lVrMCY4AAAAJ&hl=en" class="badge-link scholar-badge" target="_blank">🎓 Google Scholar</a>
+              <a href="https://github.com/saitejabandaru-in" class="badge-link github-badge" target="_blank">🐙 GitHub Profile</a>
+              <a href="https://orcid.org/0009-0006-7797-2635" class="badge-link orcid-badge" target="_blank">🆔 ORCID Identifier</a>
+              <a href="https://www.researchgate.net/profile/Sai-Teja-Bandaru" class="badge-link researchgate-badge" target="_blank">🔬 ResearchGate</a>
+              <a href="https://sciprofiles.com/profile/saitejabandaru" class="badge-link sciprofiles-badge" target="_blank">📄 SciProfiles (MDPI)</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer-bar">
+      <p>© 2026 saitejabandaru.com • Certified open-source curriculum platform. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript Application -->
+  <script src="app.js"></script>
+</body>
+</html>

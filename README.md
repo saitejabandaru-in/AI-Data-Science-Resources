@@ -21,7 +21,10 @@
 <div align="center">
   <p align="center">
     <strong>⚔️ Welcome, Initiate, to the Grand Archive of AI & Data Science! ⚔️</strong><br/>
-    This is not a boring textbook repository. This is an interactive, gamified journey through the core realms of databases, computation, intelligence, and system architecture. Track your stats, conquer programming quests, run terminal benchmarks, and defeat the guardian to claim a verified LinkedIn Badge!
+    This is not a boring textbook repository. This is an interactive, gamified journey through the core realms of databases, computation, intelligence, and system architecture. Track your stats, conquer programming quests, run interactive browser simulations, and defeat the guardian to claim a verified LinkedIn Badge!
+  </p>
+  <p align="center">
+    🚀 <strong>Try the Web Companion App:</strong> <a href="https://saitejabandaru-in.github.io/AI-Data-Science-Resources/" target="_blank">saitejabandaru-in.github.io/AI-Data-Science-Resources/</a>
   </p>
 </div>
 
@@ -157,6 +160,14 @@ Now, type any of these commands and press Enter to run our interactive labs:
 *   **Run the Visual Neural Network Simulator:**
     ```bash
     python3 scripts/nn_simulator.py
+    ```
+*   **Run the SQL Query Optimizer Plan Simulator:**
+    ```bash
+    python3 scripts/sql_optimizer.py
+    ```
+*   **Run the Step-by-Step Backpropagation Simulator:**
+    ```bash
+    python3 scripts/backprop_visualizer.py
     ```
 
 ---

@@ -4,6 +4,9 @@ import random
 import argparse
 import datetime
 import urllib.parse
+import hashlib
+import base64
+import json
 
 # Define the question bank
 QUESTIONS = [
@@ -172,7 +175,30 @@ def generate_svg_badge(name, date_str):
     except Exception as e:
         print(f"\n⚠️ Could not save SVG badge file: {e}")
 
-def generate_markdown_certificate(name, date_str):
+def generate_verification_token(name, date_str, score):
+    """Generates a cryptographically verifiable token."""
+    name_clean = name.strip()
+    date_clean = date_str.strip()
+    salt = "AI_DATA_SCIENCE_QUEST_SALT_2026"
+    
+    # Calculate sha256 hash
+    hash_input = f"{name_clean}|{date_clean}|{score}|{salt}"
+    signature = hashlib.sha256(hash_input.encode('utf-8')).hexdigest()
+    
+    # Create JSON payload
+    payload = {
+        "name": name_clean,
+        "date": date_clean,
+        "score": f"{score}/9",
+        "signature": signature
+    }
+    
+    # Encode as Base64 string
+    payload_json = json.dumps(payload)
+    token = base64.b64encode(payload_json.encode('utf-8')).decode('utf-8')
+    return token
+
+def generate_markdown_certificate(name, date_str, verification_token):
     """Generates a CERTIFICATE.md file for the user."""
     cert_content = f"""# 🏆 Certificate of Completion
 
@@ -197,6 +223,8 @@ This certificate verifies successful completion of the comprehensive technical e
 <div align="center">
   <img src="AI_Data_Science_Badge.svg" width="500" alt="Certificate Badge" />
 </div>
+
+<!-- VERIFICATION_TOKEN: {verification_token} -->
 """
     try:
         with open("CERTIFICATE.md", "w", encoding="utf-8") as f:
@@ -291,10 +319,13 @@ def run_quiz(category=None):
             
         date_str = datetime.date.today().strftime("%B %d, %Y")
         
+        # Generate verification token
+        verification_token = generate_verification_token(name, date_str, score)
+        
         # Print and generate certificate files
         print_ascii_certificate(name)
         generate_svg_badge(name, date_str)
-        generate_markdown_certificate(name, date_str)
+        generate_markdown_certificate(name, date_str, verification_token)
         
         # Generate LinkedIn parameters
         encoded_name = urllib.parse.quote_plus("AI & Data Science Core Curriculum")
@@ -309,6 +340,12 @@ def run_quiz(category=None):
         print(f"   👉 {linkedin_add_url}")
         print("2. Post a Share Announcement:")
         print(f"   👉 {linkedin_share_url}")
+        
+        print("\n🏆 JOIN THE OFFICIAL HALL OF FAME!")
+        print("To add your name to the public repository Hall of Fame:")
+        print("1. Commit your generated CERTIFICATE.md and AI_Data_Science_Badge.svg files.")
+        print("2. Push your changes to a new branch and open a Pull Request (PR) to origin/main.")
+        print("3. Our automated GitHub Verification Action will verify your certificate token and add you to the Hall of Fame!")
         print("\nNote: Make sure to commit the generated files to show your badge in your repo!")
     else:
         print("\n💡 You need at least 8 correct answers to earn the Certificate & LinkedIn Badge. Run again to retry!")

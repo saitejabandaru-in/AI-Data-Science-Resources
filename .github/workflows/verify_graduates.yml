@@ -1,0 +1,35 @@
+name: Verify Graduates & Update Hall of Fame
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'CERTIFICATE.md'
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run Token Verification Script
+        run: python scripts/verify_completion.py
+
+      - name: Commit Hall of Fame Update
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: add graduate to Hall of Fame [skip ci]"
+          file_pattern: 'HALL_OF_FAME.md'
