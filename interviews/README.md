@@ -1,5 +1,21 @@
 # 💼 Interview Prep & Case Studies
 
+<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "name": "Data Science & Machine Learning System Design Interview Preparation",
+  "description": "Curated technical interview guide with solutions for advanced SQL scenarios, consecutive login streaks, sliding window algorithms, and recommender system architectures.",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Sai Teja Bandaru"
+  },
+  "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/interviews"
+}
+</script>
+
 A structured prep guide featuring high-yield questions, clean coding implementations, and blueprints for machine learning system design interviews.
 
 ---

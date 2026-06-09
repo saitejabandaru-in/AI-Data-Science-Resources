@@ -1,5 +1,21 @@
 # 📊 SQL Core & Advanced Notes
 
+<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "name": "Advanced SQL Core Concepts & Query Optimization Notes",
+  "description": "Comprehensive study notes covering SQL query execution order, window functions, CTEs vs temp tables, indexing, partitioning, and read execution plans.",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Sai Teja Bandaru"
+  },
+  "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/sql"
+}
+</script>
+
 SQL is the foundational language of data retrieval, transformation, and analysis. This module covers core relational engine concepts, advanced window functions, and query optimization strategies crucial for database engineering and data science.
 
 ---

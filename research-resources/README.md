@@ -1,5 +1,21 @@
 # 🔬 Academic Research Compass
 
+<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "name": "Academic Research Paper Summaries & Literature Review Compass",
+  "description": "Guide on academic reading methodologies (Three-Pass Method), search database repositories, and summaries of foundational AI papers.",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Sai Teja Bandaru"
+  },
+  "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/research-resources"
+}
+</script>
+
 To stay at the forefront of AI and Data Science, reading and synthesizing academic literature is essential. This module features a curated list of foundational papers, tools, and a structured reading methodology.
 
 ---

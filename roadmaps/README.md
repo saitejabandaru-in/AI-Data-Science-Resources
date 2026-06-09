@@ -1,5 +1,21 @@
 # 🛤️ Data Science & AI Roadmaps
 
+<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "name": "Machine Learning Engineer & Data Scientist Career Roadmaps",
+  "description": "Visual guides and learning checklists for becoming a Machine Learning Engineer (MLE), Data Scientist (DS), or Data Analyst (DA).",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Sai Teja Bandaru"
+  },
+  "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/roadmaps"
+}
+</script>
+
 Detailed milestone roadmaps for three major industry roles: Machine Learning Engineer, Data Scientist, and Data Analyst.
 
 ---

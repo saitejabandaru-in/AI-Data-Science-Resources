@@ -1,5 +1,21 @@
 # 🧠 Machine Learning & Deep Learning Notes
 
+<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "name": "Machine Learning & Deep Learning Foundation Course Notes",
+  "description": "Comprehensive notes covering ML linear algebra, calculus, probability estimation, tree ensembling, activation functions, backpropagation optimizers, Transformer causal attention, LoRA, and RAG pipelines.",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Sai Teja Bandaru"
+  },
+  "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/machine-learning"
+}
+</script>
+
 A comprehensive guide from statistical machine learning foundations to deep neural architectures and state-of-the-art Generative AI (LLMs, RAG).
 
 ---
