@@ -1,4 +1,6 @@
-# 🚀 AI & Data Science Resources
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4F7CAC,100:1C2B36&height=220&section=header&text=AI%20Data%20Science%20Resources&fontSize=38&fontColor=E6EEF3&animation=fadeIn&fontAlignY=35&desc=Theory%20•%20Coding%20•%20Quizzes%20•%20Interviews%20•%20Roadmaps&descAlignY=55" />
+</p>
 
 <div align="center">
 
@@ -91,7 +93,7 @@ Here is a curated compilation of the absolute best free courses, textbooks, data
 ### 📂 3. Best Dataset Repositories
 *   **[Kaggle Datasets](https://www.kaggle.com/datasets)** - Thousands of public datasets for project practice.
 *   **[Hugging Face Datasets](https://huggingface.co/datasets)** - Large-scale datasets for NLP, Audio, and Computer Vision.
-*   **[UCI Machine Learning Repository](https://archive.ics.luc.edu/)** - The classic repository for academic datasets.
+*   **[UCI Machine Learning Repository](https://archive.ics.uci.edu/)** - The classic repository for academic datasets.
 
 ### 📝 4. Best Cheat Sheets
 *   **Python:** [Python Cheat Sheet (Comprehensive)](https://www.pythoncheatsheet.org/)
