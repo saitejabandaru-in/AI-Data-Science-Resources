@@ -4,7 +4,7 @@ A comprehensive guide from statistical machine learning foundations to deep neur
 
 ---
 
-## 🧸 Machine Learning Explained Like I'm 5 (ELI5)
+## 🧸 Machine Learning Intuitive Analogies
 
 *   **Machine Learning** is teaching a computer by **showing it examples** instead of writing strict rules. It is like showing a toddler 100 photos of dogs until they can successfully point out a real dog in the park.
 *   **Linear Regression** is like **drawing a line of best fit**. If a tree grows 2 feet every year, you draw a straight line upward to guess how tall it will be in 5 years.

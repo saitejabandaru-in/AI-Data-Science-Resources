@@ -4,7 +4,7 @@ SQL is the foundational language of data retrieval, transformation, and analysis
 
 ---
 
-## 🧸 SQL Explained Like I'm 5 (ELI5)
+## 🧸 SQL Intuitive Analogies
 
 *   **Database tables** are like massive spreadsheets filled with rows of information.
 *   **SQL Queries** are like ordering a custom burger at a restaurant:

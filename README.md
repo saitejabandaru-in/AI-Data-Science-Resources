@@ -12,16 +12,16 @@
 <p align="center">
   A premium, structured personal knowledge repository containing core theory, coding patterns, interactive quizzes, interview preparation guides, academic research roadmaps, and curated free resources.
   <br />
-  <strong>🎓 Designed for absolute beginners: Every file features ELI5 (Explain Like I'm 5) analogies!</strong>
+  <strong>🎓 Designed for absolute beginners: Every file features intuitive concept analogies!</strong>
 </p>
 
 </div>
 
 ---
 
-## 🧸 What is ELI5?
+## 🧸 Intuitive Concept Analogies
 
-Data Science and AI can sound like a different language. To help you learn, **every folder in this repository features an ELI5 (Explain Like I'm 5) section** that uses simple real-world analogies to explain complex topics before diving into the advanced code and math.
+Data Science and AI can sound like a different language. To help you learn, **every folder in this repository features an intuitive analogy section** that uses simple real-world comparisons to explain complex topics before diving into the advanced code and math.
 
 ---
 

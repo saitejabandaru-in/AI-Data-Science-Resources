@@ -4,7 +4,7 @@ A structured prep guide featuring high-yield questions, clean coding implementat
 
 ---
 
-## 🧸 Interview Concepts Explained Like I'm 5 (ELI5)
+## 🧸 Interview Concepts Intuitive Analogies
 
 *   **Sliding Window Algorithm:** Imagine you are looking at a row of houses through a small cardboard tube. Instead of walking all the way back to the start and recounting every house every time you take a step, you just **slide your tube one house forward**. You only look at the new house that enters the tube on the right, and forget the house that just slid out on the left. This saves a massive amount of time!
 *   **Gaps & Islands (SQL):** Imagine a calendar where you put a star on days you studied. If you studied Monday, Tuesday, Thursday, and Friday, you have two **Islands** of consecutive study days (Mon-Tue, and Thu-Fri) separated by a **Gap** (Wednesday). Gaps & Islands is a SQL trick to group these consecutive blocks of dates together.

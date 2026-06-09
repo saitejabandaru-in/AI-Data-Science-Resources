@@ -4,7 +4,7 @@ Python is the lingua franca of data engineering, machine learning, and AI resear
 
 ---
 
-## 🧸 Python Explained Like I'm 5 (ELI5)
+## 🧸 Python Intuitive Analogies
 
 *   **Variables** are like **labeled boxes**. You can put a toy inside a box labeled `my_toy = "bear"`. Whenever you ask Python for `my_toy`, it opens the box and shows you the bear!
 *   **Data Structures** are different types of containers:
