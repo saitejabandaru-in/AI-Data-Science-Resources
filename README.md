@@ -241,3 +241,46 @@ Begin by studying the transformer self-attention mechanism from the paper "Atten
 
 If you find these notes helpful, drop a ⭐️ to help others discover them! Found an issue, typo, or want to add a note? Feel free to create an issue or submit a pull request!
 
+---
+
+## 👤 Meet the Author (Persona)
+
+<p align="center">
+  <img src="assets/author_card.svg" width="800" alt="Sai Teja Bandaru - Author Persona Card" />
+</p>
+
+<p align="center">
+  <a href="https://www.saitejabandaru.com/" target="_blank">
+    <img src="https://img.shields.io/badge/Website-saitejabandaru.com-4F7CAC?style=for-the-badge&logo=google-chrome&logoColor=white"/>
+  </a>
+  &nbsp;
+  <a href="mailto:Saitejaroyal2311@gmail.com">
+    <img src="https://img.shields.io/badge/Email-Saitejaroyal2311%40gmail.com-99E2B4?style=for-the-badge&logo=gmail&logoColor=white&labelColor=1C2B36"/>
+  </a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/saitejabandaru-ds/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-saitejabandaru--ds-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://scholar.google.com/citations?user=lVrMCY4AAAAJ&hl=en" target="_blank">
+    <img src="https://img.shields.io/badge/Google%20Scholar-Profile-4285F4?style=flat-square&logo=google-scholar&logoColor=white"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/saitejabandaru-in" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-saitejabandaru--in-181717?style=flat-square&logo=github&logoColor=white"/>
+  </a>
+  &nbsp;
+  <a href="https://orcid.org/0009-0006-7797-2635" target="_blank">
+    <img src="https://img.shields.io/badge/ORCID-0009--0006--7797--2635-A6CE39?style=flat-square&logo=orcid&logoColor=white"/>
+  </a>
+  &nbsp;
+  <a href="https://www.researchgate.net/profile/Sai-Teja-Bandaru" target="_blank">
+    <img src="https://img.shields.io/badge/ResearchGate-Profile-00CCBB?style=flat-square&logo=researchgate&logoColor=white"/>
+  </a>
+  &nbsp;
+  <a href="https://sciprofiles.com/profile/saitejabandaru" target="_blank">
+    <img src="https://img.shields.io/badge/SciProfiles-MDPI-1B5E20?style=flat-square"/>
+  </a>
+</p>
