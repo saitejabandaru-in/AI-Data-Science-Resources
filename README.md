@@ -237,9 +237,11 @@ Once you have read the notes in each quest folder, you can enter the **Certifica
    * **LinkedIn Integration**: The terminal will print a special **Add to Profile** link. Click it, and it will automatically fill out the certificate form on LinkedIn so you can add it to your profile with one click!
 
 ### 🌟 Benefits of Your Certificate:
-* **Authorized & Signed**: Your certificate is officially authorized and signed by **Sai Teja Bandaru** (Founder & Lead AI Scientist).
+* **Authorized & Issued by saitejabandaru.com**: Your certificate is officially issued by **saitejabandaru.com** and authorized/signed by **Sai Teja Bandaru** (Founder & Instructor).
 * **LinkedIn Ready**: Add it to your LinkedIn profile under "Licenses & Certifications" to show teachers, universities, and future employers that you mastered the fundamentals!
 * **Share Everywhere**: Share the glowing badge on Twitter, GitHub, or print the certificate to hang on your wall!
+
+> ⚠️ **Disclaimer Note:** This certificate is documentation of course completion and self-paced study validation for an open-source learning path. It does not constitute a formal academic degree, professional license, or accredited credential from any university, legal authority, or licensing body.
 
 ---
 
