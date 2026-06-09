@@ -1,6 +1,57 @@
 # 🚀 AI & Data Science Resources
 
-> A premium, comprehensive, and highly curated personal knowledge repository containing core theory, coding patterns, interview preparation, academic research highlights, and learning roadmaps for modern AI Engineers, Data Scientists, and Machine Learning Engineers.
+<div align="center">
+
+![GitHub License](https://img.shields.io/github/license/saitejabandaru-in/AI-Data-Science-Resources?style=for-the-badge&color=blue)
+![GitHub stars](https://img.shields.io/github/stars/saitejabandaru-in/AI-Data-Science-Resources?style=for-the-badge&color=gold)
+![GitHub forks](https://img.shields.io/github/forks/saitejabandaru-in/AI-Data-Science-Resources?style=for-the-badge&color=green)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)
+
+<p align="center">
+  A premium, structured personal knowledge repository containing core theory, coding patterns, interactive quizzes, interview preparation guides, academic research roadmaps, and curated free resources.
+  <br />
+  <strong>Built for beginners to transition smoothly into advanced AI Engineering and Data Science.</strong>
+</p>
+
+</div>
+
+---
+
+## 🧠 Curriculum Mindmap
+
+The roadmap below displays the structured learning path of this repository. Scroll down to dive into any of these specific modules!
+
+```mermaid
+mindmap
+  root((AI & Data Science))
+    SQL Notes
+      Execution Order
+      Window Functions
+      CTEs vs Temp Tables
+      Query Tuning
+    Python Notes
+      Data Structures
+      OOP & Dataclasses
+      Decorators & Yield
+      Pandas & Polars
+    Machine Learning
+      Math foundations
+      Classical Algorithms
+      Deep Learning
+      Transformers & LLMs
+    Interview Prep
+      SQL Queries
+      Algorithmic Coding
+      ML System Design
+    Research Compass
+      Seminal Papers
+      Reading Methods
+      Search Databases
+    Roadmaps
+      ML Engineer path
+      Data Scientist path
+      Data Analyst path
+```
 
 ---
 
@@ -16,31 +67,32 @@
 
 ---
 
-## 🛠️ Repository Tour & Core Highlights
+## 🎁 Ultimate Free Learning Resources Library
 
-### 1. [SQL Notes](./sql/README.md)
-*   **Query Life Cycle:** Execution order of `FROM` ➡️ `WHERE` ➡️ `GROUP BY` ➡️ `HAVING` ➡️ `SELECT` ➡️ `ORDER BY` ➡️ `LIMIT`.
-*   **Window Functions:** Complete breakdown of `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()`, `LEAD()`, and `LAG()`.
-*   **Query Optimization:** How to use indexing, partitioning, and read execution plans (`EXPLAIN ANALYZE`).
+Here is a curated compilation of the absolute best free courses, textbooks, datasets, and cheat sheets available on the web.
 
-### 2. [Python & High-Performance Data Handling](./python/README.md)
-*   **Concepts:** Decorators, generators, context managers, and OOP design patterns.
-*   **Performance:** Pandas vectorization vs. apply, memory profiling, and Polars lazy execution.
+### 🎓 1. Best Free Courses
+*   **Mathematics for ML:** [Imperial College London Mathematics for Machine Learning (YouTube)](https://www.youtube.com/playlist?list=PLiiljT3NqomXHyL9F1IjYtXyH295d43T0) - Linear Algebra and Multivariate Calculus.
+*   **Machine Learning (Andrew Ng):** [Stanford CS229: Machine Learning (YouTube)](https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXSihR70JHGPFiLy) - The Gold Standard for ML math.
+*   **Deep Learning:** [Fast.ai: Practical Deep Learning for Coders](https://course.fast.ai/) - Top-tier top-down coding-first course.
+*   **Neural Networks from Scratch:** [Andrej Karpathy's Zero to Hero](https://karpathy.ai/zero-to-hero.html) - Step-by-step neural network implementations.
+*   **NLP & Transformers:** [Hugging Face NLP Course](https://huggingface.co/learn/nlp-course) - Learn tokenizer, models, pipelines, and dataset APIs.
+*   **SQL Mastery:** [Select Star SQL](https://selectstarsql.com/) - Interactive SQL book for beginners.
 
-### 3. [Machine Learning & Deep Learning](./machine-learning/README.md)
-*   **Core Algorithms:** Intuitive math and application of supervised, unsupervised, and ensemble methods.
-*   **Modern AI:** Transformer architecture, Attention mechanisms, PEFT (LoRA, QLoRA), and RAG pipeline designs.
+### 📚 2. Best Free Textbooks (with PDFs)
+*   **Classical ML:** [An Introduction to Statistical Learning (ISL) with Python](https://www.statlearning.com/) - Essential reading for ML theory.
+*   **Deep Learning:** [Deep Learning Book by Goodfellow, Bengio, and Courville](https://www.deeplearningbook.org/) - Comprehensive theoretical textbook.
+*   **Reinforcement Learning:** [Reinforcement Learning: An Introduction by Sutton & Barto](http://incompleteideas.net/book/the-book-2nd.html) - The ultimate guide.
 
-### 4. [Interview Questions & Systems Design](./interviews/README.md)
-*   **SQL & Coding:** Real-world interview queries (e.g., sessionization, rolling averages) and Python algorithms.
-*   **System Design:** Complete blueprints for recommendation systems and anomaly/fraud detection pipelines.
+### 📂 3. Best Dataset Repositories
+*   **[Kaggle Datasets](https://www.kaggle.com/datasets)** - Thousands of public datasets for project practice.
+*   **[Hugging Face Datasets](https://huggingface.co/datasets)** - Large-scale datasets for NLP, Audio, and Computer Vision.
+*   **[UCI Machine Learning Repository](https://archive.ics.uci.edu/)** - The classic repository for academic datasets.
 
-### 5. [Research Compass](./research-resources/README.md)
-*   **Seminal Papers:** Quick summaries and core contributions of foundational papers (Transformer, ResNet, Adam).
-*   **Literature Reviews:** Structured approach to reading papers effectively.
-
-### 6. [Roadmaps](./roadmaps/README.md)
-*   Clear path diagrams detailing key technologies to master for ML Engineering, Data Science, and Analytics.
+### 📝 4. Best Cheat Sheets
+*   **Python:** [Python Cheat Sheet (Comprehensive)](https://www.pythoncheatsheet.org/)
+*   **Data Science / NumPy / Pandas:** [DataCamp Cheat Sheets Catalog](https://www.datacamp.com/blog/category/cheat-sheets)
+*   **Machine Learning Math:** [Stanford CS229 VIP Cheatsheets](https://stanford.edu/~shervine/teaching/cs-229/)
 
 ---
 

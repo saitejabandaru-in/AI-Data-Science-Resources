@@ -8,6 +8,7 @@ A structured prep guide featuring high-yield questions, clean coding implementat
 1. [Advanced SQL Questions](#1-advanced-sql-questions)
 2. [Python Algorithmic Coding](#2-python-algorithmic-coding)
 3. [Machine Learning System Design Blueprints](#3-machine-learning-system-design-blueprints)
+4. [🎁 Free Interview Prep Resources](#4-free-interview-prep-resources)
 
 ---
 
@@ -83,6 +84,21 @@ WHERE streak_length >= 3;
 
 ## 2. Python Algorithmic Coding
 
+### Sliding Window Technique Visualization
+Many substring and subarray problems can be optimized from $O(N^2)$ to $O(N)$ using the sliding window strategy, where a start and end pointer define the window boundaries:
+
+```mermaid
+graph LR
+    subgraph "Window: [l...r]"
+        Char1["s[l]"] --- Char2["s[l+1]"] --- Char3["s[r]"]
+    end
+    style Char1 fill:#bfdbfe,stroke:#2563eb
+    style Char2 fill:#bfdbfe,stroke:#2563eb
+    style Char3 fill:#bfdbfe,stroke:#2563eb
+```
+
+---
+
 ### Problem 1: Merging Overlapping Intervals
 **Question:** Given an array of intervals where `intervals[i] = [start, end]`, merge all overlapping intervals.
 
@@ -140,50 +156,29 @@ def length_of_longest_substring(s: str) -> int:
 
 ## 3. Machine Learning System Design Blueprints
 
-### Case Study: Real-Time Fraud Detection System
-Design a system to detect fraudulent credit card transactions in real-time (latency constraint < 50ms).
+### Case Study: Recommender System Pipeline
+Designing large scale recommendation systems (e.g., Netflix, YouTube) requires a multi-stage funnel to reduce millions of items to a small curated list:
 
-```
-[Transaction Request] 
-      │
-      ▼
-┌───────────┐         ┌───────────────┐
-│ API Rule  │ ──────> │ Feature Store │ (Fetches historical/aggregate profile metrics)
-│ Engine    │         └───────┬───────┘
-└─────┬─────┘                 │
-      │ (Fast Pass)           ▼
-      │               ┌───────────────┐
-      └─────────────> │ XGBoost Model │ (Online Inference Node)
-                      └───────┬───────┘
-                              │
-                    ┌─────────┴─────────┐
-             [Fraud] │           │ [Legit]
-                     ▼           ▼
-             ┌───────────┐   ┌───────────────┐
-             │ Block/    │   │ Allow         │
-             │ Challenge │   │ Transaction   │
-             └───────────┘   └───────────────┘
+```mermaid
+graph TD
+    AllItems["All Catalog Items (Millions)"] --> Retrieval["1. Retrieval (Collaborative Filtering, Vector DB)"]
+    Retrieval --> CandidateItems["Candidates (Hundreds)"]
+    CandidateItems --> Ranking["2. Ranking (Deep Learning, GBDT Click Models)"]
+    Ranking --> RankedItems["Sorted Items (Dozens)"]
+    RankedItems --> ReRanking["3. Re-ranking (Diversity, Business Rules, Filtering)"]
+    ReRanking --> FinalRecommendations["Final Recommendation List (Top 10)"]
 ```
 
-#### 1. Requirements & Constraints
-*   **Latency:** Hard limit of 50ms per transaction. Must use lightweight models or cached feature lookups.
-*   **High Class Imbalance:** Fraud transactions typically represent < 0.1% of dataset.
+#### Recommender Design Components:
+1.  **Retrieval (Candidate Generation):** Fast filters (e.g., Approximate Nearest Neighbors) to screen out irrelevant items and produce a candidate set of a few hundred items.
+2.  **Ranking (Scoring):** Fine-grained scoring using complex models (e.g., Deep & Cross Networks, XGBoost) to predict click-through rate (CTR).
+3.  **Re-ranking (Post-processing):** Deduplication, diversity enhancement (prevent recommending 5 consecutive identical items), and business rules.
 
-#### 2. Feature Engineering & Feature Store
-*   **Real-time Features:** Transaction amount, geographic distance from last transaction, time elapsed since last transaction.
-*   **Aggregate Profile Features (from Feature Store):** Number of transactions in the last 24 hours, average transaction amount in the last 30 days.
+---
 
-#### 3. Handling Class Imbalance
-*   **Resampling:** Downsample major class (legit transactions) combined with SMOTE (Synthetic Minority Over-sampling Technique) on minority class.
-*   **Algorithmic:** Use class-weights (e.g., `scale_pos_weight` in XGBoost) to penalize false negatives more heavily.
-*   **Loss Functions:** Use Focal Loss to focus training on hard-to-classify samples.
+## 4. Free Interview Prep Resources
 
-#### 4. Modeling & Inference
-*   **Model Selection:** XGBoost or LightGBM. They offer exceptional latency-performance characteristics compared to deep neural networks for tabular data.
-*   **Fallback Mechanism:** If feature store query times out, fallback to a heuristic rules-engine.
-
-#### 5. Evaluation Metrics
-*   **Do NOT use Accuracy:** High accuracy is trivial on imbalanced datasets (predicting all legit transactions yields 99.9% accuracy).
-*   **Primary Metrics:**
-    *   **Precision-Recall AUC (PR-AUC):** More informative than ROC-AUC because it focuses on the performance of the minority fraud class.
-    *   **Recall at 99% Precision:** We want to catch as much fraud as possible while maintaining a low false-positive rate (to protect user experience).
+*   **[NeetCode](https://neetcode.io/)** - A structured roadmap of coding questions with step-by-step video explanations. Highly recommended for algorithmic practice.
+*   **[LeetCode](https://leetcode.com/)** - The industry-standard platform for practicing SQL and algorithmic coding questions.
+*   **[Chip Huyen's Machine Learning System Design](https://huyenchip.com/books/)** - The ultimate textbook resource for designing production-grade ML systems under real-world constraints.
+*   **[Interactive SQL Exercises (SelectStarSQL)](https://selectstarsql.com/)** - Perfect for reviewing core SQL concepts before interviews.

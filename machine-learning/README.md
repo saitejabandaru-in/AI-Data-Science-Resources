@@ -9,6 +9,7 @@ A comprehensive guide from statistical machine learning foundations to deep neur
 2. [Classical Machine Learning Algorithms](#2-classical-machine-learning-algorithms)
 3. [Deep Learning Foundations](#3-deep-learning-foundations)
 4. [Generative AI & Large Language Models (LLMs)](#4-generative-ai--large-language-models-llms)
+5. [🎁 Free Machine Learning & Deep Learning Resources](#5-free-machine-learning--deep-learning-resources)
 
 ---
 
@@ -57,6 +58,20 @@ Understanding the mathematics under the hood is critical for debugging model wei
 
 ## 3. Deep Learning Foundations
 
+### Optimization & Gradient Descent
+
+Gradient descent works by stepping parameters in the negative direction of the gradient to reach the minimum of the loss curve:
+
+```mermaid
+graph TD
+    Start["1. Initialize Weights Randomly"] --> Forward["2. Forward Pass: Compute Predictions & Loss"]
+    Forward --> ComputeGrad["3. Backward Pass: Compute Gradients (dLoss/dWeight)"]
+    ComputeGrad --> Update["4. Update Weights: Weight = Weight - Learning_Rate * Gradient"]
+    Update --> Check["5. Convergence Reached? (Loss stops decreasing)"]
+    Check -- No --> Forward
+    Check -- Yes --> End["Stop Training"]
+```
+
 ### Activation Functions
 *   **ReLU:** $f(x) = \max(0, x)$. Mitigates vanishing gradient issues but can suffer from "dying ReLU" (inactive neurons).
 *   **GELU (Gaussian Error Linear Unit):** $f(x) = x \cdot \Phi(x)$ (where $\Phi(x)$ is the cumulative distribution function of the standard normal distribution). Used in BERT, GPT, and modern transformer architectures.
@@ -81,58 +96,44 @@ $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)
 
 where:
 *   $Q$ (Query), $K$ (Key), $V$ (Value) are linear projections of input embeddings.
-*   $\sqrt{d_k}$ is the scaling factor (dimension of keys) to prevent dot-products from growing too large in high dimensions (which drives softmax into flat gradients).
+*   $\sqrt{d_k}$ is the scaling factor (dimension of keys) to prevent dot-products from growing too large in high dimensions.
 
-```
-Input Tokens ➡️ Word Embeddings ➡️ Self-Attention Layer ➡️ Feed Forward ➡️ Logits ➡️ Next Token
+### Model Architectures: Encoder vs. Decoder
+
+```mermaid
+graph LR
+    subgraph "Encoder-Only (e.g. BERT)"
+        In1["Input Text"] --> Enc["Bidirectional Self-Attention"] --> Out1["Representations / Class Labels"]
+    end
+    subgraph "Decoder-Only (e.g. GPT)"
+        In2["Prompt Tokens"] --> Dec["Causal Masked Self-Attention"] --> Out2["Next Predicted Token"]
+    end
 ```
 
 ### Parameter-Efficient Fine-Tuning (PEFT)
-Fine-tuning models with billions of parameters requires substantial memory. PEFT reduces compute overhead.
 *   **LoRA (Low-Rank Adaptation):** Keeps base model weights frozen. Injects trainable rank decomposition matrices ($A$ and $B$) into the attention layers.
     $$W_{\text{updated}} = W_{\text{frozen}} + \Delta W \quad \text{where} \quad \Delta W = B \cdot A$$
-    If $W$ is $d \times d$, and rank $r \ll d$, the number of parameters drops from $d^2$ to $2 \cdot d \cdot r$.
 *   **QLoRA (Quantized LoRA):** Compresses the base model to 4-bit NormalFloat (NF4) and uses Double Quantization to further reduce RAM usage during LoRA fine-tuning.
 
 ### Retrieval-Augmented Generation (RAG)
 Augments LLMs with external, dynamic data sources without re-training.
 
+```mermaid
+graph TD
+    Question["User Question"] --> Embeddings["Generate Query Vector"]
+    Embeddings --> Search["Search Vector Database"]
+    Search --> RetDocs["Retrieve Top-K Context Documents"]
+    RetDocs --> Prompt["Construct Augmented Prompt (Context + Question)"]
+    Prompt --> LLM["LLM Processing Node"]
+    LLM --> Answer["Generated Output Answer"]
 ```
-                   ┌─────────────────┐
-                   │  User Question  │
-                   └────────┬────────┘
-                            │
-                            ▼
-             ┌──────────────────────────────┐
-             │ Vector Embeddings & Indexing  │
-             └──────────────┬───────────────┘
-                            │
-                            ▼
-                ┌───────────────────────┐
-                │   Retrieval Query     │
-                └───────────┬───────────┘
-                            │
-                            ▼
-                ┌───────────────────────┐
-                │ Vector Database Search│
-                └───────────┬───────────┘
-                            │ (Relevant Context Documents)
-                            ▼
-    ┌───────────────────────────────────────────────┐
-    │ Augmentation (Inject System Prompt + Context) │
-    └───────────────────────┬───────────────────────┘
-                            │
-                            ▼
-                     ┌─────────────┐
-                     │  LLM Engine │
-                     └──────┬──────┘
-                            │
-                            ▼
-                  ┌───────────────────┐
-                  │ Accurate Response │
-                  └───────────────────┘
-```
-*   **Key Optimizations:**
-    *   *Hierarchical Node Parsing:* Chunking documents into parent-child blocks.
-    *   *Hybrid Search:* Combining semantic search (embeddings) with keyword search (BM25).
-    *   *Reranking:* Re-scoring retrieved nodes using a cross-encoder model (e.g., Cohere Rerank) to prioritize top relevance.
+
+---
+
+## 5. Free Machine Learning & Deep Learning Resources
+
+*   **[StatQuest with Josh Starmer](https://www.youtube.com/@statquest)** - The absolute best channel for making complex ML and statistics concepts intuitive with clear, step-by-step visual aids.
+*   **[Fast.ai (Practical Deep Learning for Coders)](https://course.fast.ai/)** - An incredible top-down, code-first course that teaches you how to train state-of-the-art models from day one.
+*   **[Stanford CS229: Machine Learning Course Lectures](https://cs229.stanford.edu/)** - The legendary Stanford course taught by Andrew Ng. Excellent for mathematical foundations.
+*   **[Andrej Karpathy's Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html)** - An amazing series of video tutorials building neural networks (like GPT) from scratch in PyTorch.
+*   **[Hugging Face Course](https://huggingface.co/learn/nlp-course)** - Learn how to use Hugging Face libraries for NLP, tokenization, model loading, and fine-tuning.

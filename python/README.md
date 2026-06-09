@@ -9,12 +9,30 @@ Python is the lingua franca of data engineering, machine learning, and AI resear
 2. [Object-Oriented Programming (OOP) & Dataclasses](#2-object-oriented-programming-oop--dataclasses)
 3. [Advanced Patterns: Decorators, Generators, Context Managers](#3-advanced-patterns-decorators-generators-context-managers)
 4. [High-Performance Scientific Computing (Pandas vs. Polars)](#4-high-performance-scientific-computing-pandas-vs-polars)
+5. [🎁 Free Python & Data Science Learning Resources](#5-free-python--data-science-learning-resources)
 
 ---
 
 ## 1. Core Data Structures & Complexity
 
 Writing performant code begins with selecting the correct built-in data structure.
+
+```mermaid
+graph TD
+    Collections["Python Collections"]
+    Sequences["Sequences (Indexable)"]
+    Mappings["Mappings (Hash-based)"]
+    Sets["Sets (Unordered/Unique)"]
+    
+    Collections --> Sequences
+    Collections --> Mappings
+    Collections --> Sets
+    
+    Sequences --> List["List: [a, b, c] (Mutable)"]
+    Sequences --> Tuple["Tuple: (a, b, c) (Immutable)"]
+    Mappings --> Dict["Dict: {key: val} (Key-Value)"]
+    Sets --> Set["Set: {a, b, c} (Unique elements)"]
+```
 
 | Structure | Syntax | Ordering | Mutability | Average Access | Average Insertion | Common Use Case |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -75,6 +93,20 @@ class Hyperparameters:
 
 ### 1. Decorators
 Modify the behavior of functions or classes without permanently altering their code.
+
+```mermaid
+sequenceDiagram
+    participant User as Caller
+    participant Dec as Decorator Wrapper
+    participant Func as Original Function
+    
+    User ->> Dec: Call decorated_function(*args)
+    Note over Dec: Pre-execution logic (e.g., start timer, log input)
+    Dec ->> Func: Call original function(*args)
+    Func -->> Dec: Return result
+    Note over Dec: Post-execution logic (e.g., stop timer, log output)
+    Dec -->> User: Return result
+```
 
 ```python
 import time
@@ -151,3 +183,15 @@ lazy_query = (
 # Runs execution with optimal Rust query planer
 results = lazy_query.collect()
 ```
+
+---
+
+## 5. Free Python & Data Science Learning Resources
+
+Learn python and its scientific computing libraries with these free high-quality tutorials:
+
+*   **[Python.org Tutorial](https://docs.python.org/3/tutorial/)** - The official Python introduction. Extremely thorough and accurate.
+*   **[Real Python](https://realpython.com/)** - Premium, beginner-friendly tutorials, deep-dives, and code snippets.
+*   **[Python for Everybody (Charles Severance)](https://www.py4e.com/)** - The most popular introductory Python course, completely free with videos and exercises.
+*   **[Kaggle Learn: Python](https://www.kaggle.com/learn/python)** - Short, interactive exercises designed to get you ready for Data Science.
+*   **[Polars User Guide](https://docs.pola.rs/)** - The official user guide for transitioning from Pandas to Rust-powered Polars DataFrames.

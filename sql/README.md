@@ -6,9 +6,11 @@ SQL is the foundational language of data retrieval, transformation, and analysis
 
 ## 🗺️ Table of Contents
 1. [SQL Query Execution Order](#1-sql-query-execution-order)
-2. [Advanced Window Functions](#2-advanced-window-functions)
-3. [CTEs vs. Subqueries vs. Temporary Tables](#3-ctes-vs-subqueries-vs-temporary-tables)
-4. [Query Optimization & Performance Tuning](#4-query-optimization--performance-tuning)
+2. [Visual Join Guide](#2-visual-join-guide)
+3. [Advanced Window Functions](#3-advanced-window-functions)
+4. [CTEs vs. Subqueries vs. Temporary Tables](#4-ctes-vs-subqueries-vs-temporary-tables)
+5. [Query Optimization & Performance Tuning](#5-query-optimization--performance-tuning)
+6. [🎁 Free SQL Learning & Practice Resources](#6-free-sql-learning--practice-resources)
 
 ---
 
@@ -16,19 +18,21 @@ SQL is the foundational language of data retrieval, transformation, and analysis
 
 While SQL code is written starting with the `SELECT` keyword, the database engine executes commands in a logical order that dictates variable availability and performance behaviors.
 
-### Written Order vs. Logical Execution Order
+### Logical Query Execution Pipeline
 
-```
-[Written Order]                      [Logical Execution Order]
-1. SELECT                            1. FROM & JOIN (Loads & compiles dataset)
-2. FROM & JOIN                       2. ON (Applies join filters)
-3. WHERE                             3. WHERE (Filters rows before grouping)
-4. GROUP BY                          4. GROUP BY (Aggregates data)
-5. HAVING                            5. HAVING (Filters aggregated groups)
-6. WINDOW                            6. SELECT (Selects columns & calculates functions)
-7. ORDER BY                          7. DISTINCT (Removes duplicates)
-8. LIMIT / OFFSET                    8. ORDER BY (Sorts results)
-                                     9. LIMIT / OFFSET (Slices rows)
+```mermaid
+graph TD
+    FROM["1. FROM & JOIN (Loads & compiles dataset)"]
+    ON["2. ON (Applies join filters)"]
+    WHERE["3. WHERE (Filters rows before grouping)"]
+    GROUP["4. GROUP BY (Aggregates data)"]
+    HAVING["5. HAVING (Filters aggregated groups)"]
+    SELECT["6. SELECT (Selects columns & calculates functions)"]
+    DISTINCT["7. DISTINCT (Removes duplicates)"]
+    ORDER["8. ORDER BY (Sorts results)"]
+    LIMIT["9. LIMIT / OFFSET (Slices rows)"]
+
+    FROM --> ON --> WHERE --> GROUP --> HAVING --> SELECT --> DISTINCT --> ORDER --> LIMIT
 ```
 
 > [!WARNING]
@@ -36,7 +40,38 @@ While SQL code is written starting with the `SELECT` keyword, the database engin
 
 ---
 
-## 2. Advanced Window Functions
+## 2. Visual Join Guide
+
+Joins combine rows from two or more tables based on a related column between them.
+
+```mermaid
+graph LR
+    subgraph "Inner Join"
+        A1((Table A)) --- B1((Table B))
+        style A1 fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px
+        style B1 fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px
+    end
+    subgraph "Left Join"
+        A2((Table A)) --- B2((Table B))
+        style A2 fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px
+        style B2 fill:#fff,stroke:#1d4ed8,stroke-width:2px
+    end
+    subgraph "Right Join"
+        A3((Table A)) --- B3((Table B))
+        style A3 fill:#fff,stroke:#1d4ed8,stroke-width:2px
+        style B3 fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px
+    end
+```
+
+*   **INNER JOIN:** Returns records that have matching values in both tables.
+*   **LEFT (OUTER) JOIN:** Returns all records from the left table, and the matched records from the right table. Fill with `NULL` if no match exists.
+*   **RIGHT (OUTER) JOIN:** Returns all records from the right table, and the matched records from the left table.
+*   **FULL (OUTER) JOIN:** Returns all records when there is a match in either left or right table.
+*   **CROSS JOIN:** Returns the Cartesian product of the two tables (every row of A paired with every row of B).
+
+---
+
+## 3. Advanced Window Functions
 
 Window functions perform calculations across a set of table rows that are somehow related to the current row, without collapsing them into a single row like `GROUP BY` does.
 
@@ -78,7 +113,7 @@ FROM sales_records;
 
 ---
 
-## 3. CTEs vs. Subqueries vs. Temporary Tables
+## 4. CTEs vs. Subqueries vs. Temporary Tables
 
 Selecting the correct temporary storage mechanism depends on scope, readability, and performance.
 
@@ -98,7 +133,7 @@ Physically instantiated tables stored in memory or temporary disk segments that 
 
 ---
 
-## 4. Query Optimization & Performance Tuning
+## 5. Query Optimization & Performance Tuning
 
 High-performance SQL requires optimizing how the execution engine reads and processes tables.
 
@@ -123,3 +158,15 @@ Key operations to audit:
 *   **Hash Join vs. Nested Loop:**
     *   *Nested Loop:* Compares every row of table A with table B. Fine for small datasets, terrible for large ones.
     *   *Hash Join:* Builds a hash table in memory of the smaller relation, then scans the larger relation. Highly efficient.
+
+---
+
+## 6. Free SQL Learning & Practice Resources
+
+Accelerate your SQL skills with these high-quality interactive tools and sites:
+
+*   **[Select Star SQL](https://selectstarsql.com/)** - An interactive online book that guides you through SQL using a real-world database. Perfect for absolute beginners.
+*   **[SQLZoo](https://sqlzoo.net/)** - A interactive platform filled with hands-on practice tutorials and quizzes for all levels.
+*   **[LeetCode SQL 50 Study Plan](https://leetcode.com/studyplan/30-days-of-sql/)** - Curated list of 50 core SQL questions to prepare for data science interviews.
+*   **[DB Fiddle](https://www.db-fiddle.com/)** - A browser-based database sandbox supporting PostgreSQL, MySQL, and SQLite. Use it to write and test your SQL queries on the fly.
+*   **[SQLBolt](https://sqlbolt.com/)** - Step-by-step interactive lessons to learn SQL from scratch.
