@@ -4,6 +4,17 @@ A structured prep guide featuring high-yield questions, clean coding implementat
 
 ---
 
+## 🧸 Interview Concepts Explained Like I'm 5 (ELI5)
+
+*   **Sliding Window Algorithm:** Imagine you are looking at a row of houses through a small cardboard tube. Instead of walking all the way back to the start and recounting every house every time you take a step, you just **slide your tube one house forward**. You only look at the new house that enters the tube on the right, and forget the house that just slid out on the left. This saves a massive amount of time!
+*   **Gaps & Islands (SQL):** Imagine a calendar where you put a star on days you studied. If you studied Monday, Tuesday, Thursday, and Friday, you have two **Islands** of consecutive study days (Mon-Tue, and Thu-Fri) separated by a **Gap** (Wednesday). Gaps & Islands is a SQL trick to group these consecutive blocks of dates together.
+*   **Recommendation Funnel (System Design):** Imagine walking into a giant toy store with 10,000 toys.
+    *   **Retrieval:** The store helper quickly grabs 100 toys they think you might like (e.g., if you like dinosaurs, they grab all dinosaur toys).
+    *   **Ranking:** They score those 100 toys, sorting them from the most exciting to the least exciting.
+    *   **Re-ranking:** They make sure there aren't too many duplicates (so you don't get 5 identical T-Rex toys) and present the top 10 on a table for you to choose.
+
+---
+
 ## 🗺️ Table of Contents
 1. [Advanced SQL Questions](#1-advanced-sql-questions)
 2. [Python Algorithmic Coding](#2-python-algorithmic-coding)

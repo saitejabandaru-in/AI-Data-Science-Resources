@@ -4,6 +4,20 @@ SQL is the foundational language of data retrieval, transformation, and analysis
 
 ---
 
+## 🧸 SQL Explained Like I'm 5 (ELI5)
+
+*   **Database tables** are like massive spreadsheets filled with rows of information.
+*   **SQL Queries** are like ordering a custom burger at a restaurant:
+    *   `FROM`: Tell the kitchen which fridge to open to get the ingredients.
+    *   `WHERE`: Throw away any spoiled or incorrect ingredients (filters).
+    *   `GROUP BY`: Stack similar ingredients together (e.g., group all beef patties together).
+    *   `SELECT`: Put the chosen ingredients on the plate to serve to the customer!
+*   **Window Functions** are like having a **spotlight** in a classroom. Instead of mixing all students into a single average grade (which is what `GROUP BY` does), a window function lets you keep all students on the screen, but shines a spotlight on their individual ranking or their difference from the classmate sitting next to them.
+*   **CTEs (Common Table Expressions)** are like **sticky notes**. When solving a long math problem, you write down intermediate calculations on a sticky note so you don't lose track, then throw the sticky note away when the final answer is solved.
+*   **Database Indexes** are like the **index at the back of a textbook**. If you want to find the word "Query", you don't read all 1,000 pages (which is a slow *Sequential Scan*). You look at the index at the back, find the page number, and flip directly to it (a fast *Index Scan*).
+
+---
+
 ## 🗺️ Table of Contents
 1. [SQL Query Execution Order](#1-sql-query-execution-order)
 2. [Visual Join Guide](#2-visual-join-guide)

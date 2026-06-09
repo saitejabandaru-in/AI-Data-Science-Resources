@@ -4,6 +4,20 @@ Python is the lingua franca of data engineering, machine learning, and AI resear
 
 ---
 
+## 🧸 Python Explained Like I'm 5 (ELI5)
+
+*   **Variables** are like **labeled boxes**. You can put a toy inside a box labeled `my_toy = "bear"`. Whenever you ask Python for `my_toy`, it opens the box and shows you the bear!
+*   **Data Structures** are different types of containers:
+    *   **List (`[]`)**: A **grocery list**. You can add items, cross items off, and sort them, and the order they are in matters.
+    *   **Tuple (`()`)**: A **treasure map coordinate** (e.g., Latitude and Longitude). Once it's written down, you can never change it (it is *immutable*).
+    *   **Set (`{}`)**: A **bag of marbles**. All marbles must be unique colors (no duplicates allowed!), and they just jumble around in no particular order.
+    *   **Dictionary (`{:}`)**: A **phone book**. You look up a friend's name (the *Key*) to find their phone number (the *Value*).
+*   **Object-Oriented Programming (OOP)** is like building with **LEGO blueprints**. A **Class** is the paper instructions showing how to build a LEGO car. An **Object (Instance)** is the actual, physical LEGO car you build using those instructions.
+*   **Decorators** are like **wrapping paper**. You have a present (a function). A decorator wraps around the present, adding shiny wrapping paper and a nice bow (extra timing, logging, or security logic) without changing the actual present inside.
+*   **Generators (`yield`)** are like a **slow water faucet**. Instead of filling a giant, heavy swimming pool with water all at once (which takes up all your RAM memory), a generator gives you one single drop of water at a time, only when you ask for it.
+
+---
+
 ## 🗺️ Table of Contents
 1. [Core Data Structures & Complexity](#1-core-data-structures--complexity)
 2. [Object-Oriented Programming (OOP) & Dataclasses](#2-object-oriented-programming-oop--dataclasses)

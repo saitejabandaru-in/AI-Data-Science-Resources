@@ -4,6 +4,17 @@ A comprehensive guide from statistical machine learning foundations to deep neur
 
 ---
 
+## 🧸 Machine Learning Explained Like I'm 5 (ELI5)
+
+*   **Machine Learning** is teaching a computer by **showing it examples** instead of writing strict rules. It is like showing a toddler 100 photos of dogs until they can successfully point out a real dog in the park.
+*   **Linear Regression** is like **drawing a line of best fit**. If a tree grows 2 feet every year, you draw a straight line upward to guess how tall it will be in 5 years.
+*   **Overfitting** is like **memorizing the practice exam**. If a student memorizes the exact questions and answers on a practice test instead of learning the concepts, they will get a 100% on the practice test, but fail the actual final exam because the questions are slightly different.
+*   **Neural Networks** are like a **chain of friends whispering to each other**. The first friend looks at an image (e.g., the letter "A") and whispers small clues to the next friend. The last friend in the chain guesses the letter. If they guess wrong, they pass the correction back along the line so everyone knows who to trust more next time (which is *backpropagation*).
+*   **Self-Attention (Transformers)** is how computers **focus on context**. In the sentence: *"The bank of the river was muddy,"* self-attention connects the word **bank** to **river** so the computer knows it means a muddy slope of land, not a financial money bank.
+*   **RAG (Retrieval-Augmented Generation)** is like taking an **open-book exam**. Instead of forcing a computer to answer questions purely from memory (which can make it write fake facts, i.e., *hallucinations*), it searches a library first, pulls out the most relevant pages, and uses those pages to write a correct answer.
+
+---
+
 ## 🗺️ Table of Contents
 1. [Mathematics of Machine Learning](#1-mathematics-of-machine-learning)
 2. [Classical Machine Learning Algorithms](#2-classical-machine-learning-algorithms)

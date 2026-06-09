@@ -10,16 +10,20 @@
 <p align="center">
   A premium, structured personal knowledge repository containing core theory, coding patterns, interactive quizzes, interview preparation guides, academic research roadmaps, and curated free resources.
   <br />
-  <strong>Built for beginners to transition smoothly into advanced AI Engineering and Data Science.</strong>
+  <strong>🎓 Designed for absolute beginners: Every file features ELI5 (Explain Like I'm 5) analogies!</strong>
 </p>
 
 </div>
 
 ---
 
-## 🧠 Curriculum Mindmap
+## 🧸 What is ELI5?
 
-The roadmap below displays the structured learning path of this repository. Scroll down to dive into any of these specific modules!
+Data Science and AI can sound like a different language. To help you learn, **every folder in this repository features an ELI5 (Explain Like I'm 5) section** that uses simple real-world analogies to explain complex topics before diving into the advanced code and math.
+
+---
+
+## 🧠 Curriculum Mindmap
 
 ```mermaid
 mindmap
@@ -87,7 +91,7 @@ Here is a curated compilation of the absolute best free courses, textbooks, data
 ### 📂 3. Best Dataset Repositories
 *   **[Kaggle Datasets](https://www.kaggle.com/datasets)** - Thousands of public datasets for project practice.
 *   **[Hugging Face Datasets](https://huggingface.co/datasets)** - Large-scale datasets for NLP, Audio, and Computer Vision.
-*   **[UCI Machine Learning Repository](https://archive.ics.uci.edu/)** - The classic repository for academic datasets.
+*   **[UCI Machine Learning Repository](https://archive.ics.luc.edu/)** - The classic repository for academic datasets.
 
 ### 📝 4. Best Cheat Sheets
 *   **Python:** [Python Cheat Sheet (Comprehensive)](https://www.pythoncheatsheet.org/)
