@@ -87,7 +87,7 @@ const QUESTIONS = [
       A: "Penalizes the squared magnitude of coefficients.",
       B: "Can shrink some coefficient weights all the way to absolute zero.",
       C: "Is less robust to outliers.",
-      d: "Requires solving a non-convex optimization problem."
+      D: "Requires solving a non-convex optimization problem."
     },
     answer: "B",
     explanation: "L1 regularization adds a penalty equal to the absolute sum of the weights. This often drives coefficients to exactly zero, resulting in sparse models and serving as a feature selection tool. L2 regularization (Ridge) shrinks weights close to zero but rarely exactly to zero."
@@ -389,24 +389,33 @@ let nnLR = 0.1;
 let nnEpochCount = 0;
 let isTraining = false;
 let trainIntervalId = null;
+let nnInitialized = false;
 
 function initNeuralNet() {
   canvas = document.getElementById('perceptron-canvas');
   if (!canvas) return;
   ctx = canvas.getContext('2d');
   
-  // Event Listeners
-  document.getElementById('nn-lr').addEventListener('input', (e) => {
-    nnLR = parseFloat(e.target.value);
-    document.getElementById('nn-lr-val').textContent = nnLR.toFixed(3);
-  });
+  if (!nnInitialized) {
+    // Event Listeners (only added once)
+    document.getElementById('nn-lr').addEventListener('input', (e) => {
+      nnLR = parseFloat(e.target.value);
+      document.getElementById('nn-lr-val').textContent = nnLR.toFixed(3);
+    });
+    
+    document.getElementById('nn-dataset').addEventListener('change', () => {
+      generateData();
+      drawSimulation();
+    });
+    
+    document.getElementById('nn-step-btn').onclick = stepTraining;
+    document.getElementById('nn-run-btn').onclick = toggleRunTraining;
+    document.getElementById('nn-reset-btn').onclick = resetWeights;
+    
+    nnInitialized = true;
+    generateData();
+  }
   
-  document.getElementById('nn-dataset').addEventListener('change', generateData);
-  document.getElementById('nn-step-btn').onclick = stepTraining;
-  document.getElementById('nn-run-btn').onclick = toggleRunTraining;
-  document.getElementById('nn-reset-btn').onclick = resetWeights;
-  
-  generateData();
   drawSimulation();
 }
 
@@ -482,15 +491,16 @@ function drawSimulation() {
   ctx.stroke();
   
   // 2. Draw Decision Boundary Line (w0 + w1*x + w2*y = 0)
-  // Equation: y = -(w1*x + w0) / w2
+  // Equation: y = -(w1*x + w0) / w2 (handling division by zero)
   ctx.strokeStyle = '#99E2B4';
   ctx.lineWidth = 3;
   ctx.beginPath();
   
   const xStart = -1.0;
-  const yStart = -(weights[1] * xStart + weights[0]) / weights[2];
+  const w2Val = weights[2] === 0 ? 0.0001 : weights[2];
+  const yStart = -(weights[1] * xStart + weights[0]) / w2Val;
   const xEnd = 1.0;
-  const yEnd = -(weights[1] * xEnd + weights[0]) / weights[2];
+  const yEnd = -(weights[1] * xEnd + weights[0]) / w2Val;
   
   ctx.moveTo(toScreenX(xStart), toScreenY(yStart));
   ctx.lineTo(toScreenX(xEnd), toScreenY(yEnd));
