@@ -243,7 +243,7 @@ If you find these notes helpful, drop a ⭐️ to help others discover them! Fou
 
 ---
 
-## 👤 Meet the Author (Persona)
+## 👤 Meet the Author
 
 <p align="center">
   <img src="assets/author_card.svg" width="800" alt="Sai Teja Bandaru - Author Persona Card" />
