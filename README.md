@@ -19,15 +19,6 @@
 -->
 
 <div align="center">
-  <a href="https://github.com/saitejabandaru-in/AI-Data-Science-Resources/blob/main/LICENSE"><img src="https://img.shields.io/github/license/saitejabandaru-in/AI-Data-Science-Resources?style=for-the-badge&color=blue" alt="GitHub License" /></a>
-  <a href="https://github.com/saitejabandaru-in/AI-Data-Science-Resources/stargazers"><img src="https://img.shields.io/github/stars/saitejabandaru-in/AI-Data-Science-Resources?style=for-the-badge&color=gold" alt="GitHub stars" /></a>
-  <a href="https://github.com/saitejabandaru-in/AI-Data-Science-Resources/network/members"><img src="https://img.shields.io/github/forks/saitejabandaru-in/AI-Data-Science-Resources?style=for-the-badge&color=green" alt="GitHub forks" /></a>
-  <a href="https://github.com/saitejabandaru-in/AI-Data-Science-Resources/commits/main"><img src="https://img.shields.io/github/last-commit/saitejabandaru-in/AI-Data-Science-Resources?style=for-the-badge&color=violet" alt="GitHub last commit" /></a>
-  <img src="https://img.shields.io/github/repo-size/saitejabandaru-in/AI-Data-Science-Resources?style=for-the-badge&color=orange" alt="GitHub repo size" />
-  <a href="https://github.com/saitejabandaru-in/AI-Data-Science-Resources/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge" alt="PRs Welcome" /></a>
-
-  <br/><br/>
-
   <p align="center">
     <strong>⚔️ Welcome, Initiate, to the Grand Archive of AI & Data Science! ⚔️</strong><br/>
     This is not a boring textbook repository. This is an interactive, gamified journey through the core realms of databases, computation, intelligence, and system architecture. Track your stats, conquer programming quests, run terminal benchmarks, and defeat the guardian to claim a verified LinkedIn Badge!
@@ -59,12 +50,6 @@ Before you embark on the paths below, initialize your quest log.
 
 ---
 
-## 🧸 Intuitive Concept Analogies
-
-Data Science and AI can sound like a different language. To help you learn, **every folder in this repository features an intuitive analogy section** that uses simple real-world comparisons to explain complex topics before diving into the advanced code and math.
-
----
-
 ## 🔥 Why Star This Repository?
 
 > [!TIP]
@@ -72,6 +57,21 @@ Data Science and AI can sound like a different language. To help you learn, **ev
 > *   **⚡ Interactive Terminal Trials:** Don't just read notes—run live speed benchmarks (`scripts/benchmark_lab.py`) comparing Python, Pandas, and Rust-powered Polars, or watch an artificial neuron train step-by-step in your terminal (`scripts/nn_simulator.py`).
 > *   **📜 Seminal Papers Compass:** Easily navigate foundational AI literature with our structured academic reading guides and curated database links.
 > *   **💎 100% Free Resources Library:** Hand-picked courses, textbooks, datasets, and cheat sheets to take you from a complete beginner to a confident practitioner.
+
+---
+
+## ⚔️ The Quest Board: Six Paths to Mastery
+
+Choose your quest below. Each path represents a major pillar of Data Science and Artificial Intelligence.
+
+| Path | Quest Name | Difficulty | XP Reward | Key Challenges & Concepts |
+| :--- | :--- | :--- | :--- | :--- |
+| **📊 Quest 1** | [The Gates of Query Haven](./sql/README.md) | 🟢 Easy | `150 XP` | Query Execution Pipelines, Joins, Window Functions, and Index Tuning. |
+| **🐍 Quest 2** | [The Serpent's Catalyst](./python/README.md) | 🟡 Medium | `250 XP` | ABC Abstractions, Yields, Vectorization Speedups, and Polars Rust Engines. |
+| **🧠 Quest 3** | [The Cathedral of Learning](./machine-learning/README.md) | 🔴 Hard | `500 XP` | Optimization Calculus, Deep Backprop, Causal Self-Attention, LoRA, and RAG. |
+| **💼 Quest 4** | [The Colosseum of Interviews](./interviews/README.md) | 🔴 Hard | `400 XP` | Algorithmic Coding, Complex Query Scenarios, and ML System Design Funnels. |
+| **🔬 Quest 5** | [The Scroll of Seminal Whispers](./research-resources/README.md) | 🟡 Medium | `200 XP` | Three-Pass Reading Method, Literature Discovery, and Classic AI Papers. |
+| **🛤️ Quest 6** | [The Cartographer's Guild](./roadmaps/README.md) | 🟢 Easy | `100 XP` | Choosing your class (MLE, DS, DA) and mapping your personalized skill trees. |
 
 ---
 
@@ -111,18 +111,84 @@ mindmap
 
 ---
 
-## ⚔️ The Quest Board: Six Paths to Mastery
+## 🧭 How to Use This Repository (For Absolute Beginners & Kids!)
 
-Choose your quest below. Each path represents a major pillar of Data Science and Artificial Intelligence.
+If you have never coded before and have no idea what a "repository" or "terminal" is, do not worry! Here is a simple, step-by-step guide to help you get started.
 
-| Path | Quest Name | Difficulty | XP Reward | Key Challenges & Concepts |
-| :--- | :--- | :--- | :--- | :--- |
-| **📊 Quest 1** | [The Gates of Query Haven](./sql/README.md) | 🟢 Easy | `150 XP` | Query Execution Pipelines, Joins, Window Functions, and Index Tuning. |
-| **🐍 Quest 2** | [The Serpent's Catalyst](./python/README.md) | 🟡 Medium | `250 XP` | ABC Abstractions, Yields, Vectorization Speedups, and Polars Rust Engines. |
-| **🧠 Quest 3** | [The Cathedral of Learning](./machine-learning/README.md) | 🔴 Hard | `500 XP` | Optimization Calculus, Deep Backprop, Causal Self-Attention, LoRA, and RAG. |
-| **💼 Quest 4** | [The Colosseum of Interviews](./interviews/README.md) | 🔴 Hard | `400 XP` | Algorithmic Coding, Complex Query Scenarios, and ML System Design Funnels. |
-| **🔬 Quest 5** | [The Scroll of Seminal Whispers](./research-resources/README.md) | 🟡 Medium | `200 XP` | Three-Pass Reading Method, Literature Discovery, and Classic AI Papers. |
-| **🛤️ Quest 6** | [The Cartographer's Guild](./roadmaps/README.md) | 🟢 Easy | `100 XP` | Choosing your class (MLE, DS, DA) and mapping your personalized skill trees. |
+### 📍 Step 1: Install Python (The Magic Engine)
+Python is the engine that runs our games. We need to install it on your computer:
+*   **For Windows:** Go to the [Official Python Download Page](https://www.python.org/downloads/), click the big yellow **Download Python** button, open the downloaded file, and **make sure you check the box that says "Add Python.exe to PATH"** before clicking Install.
+*   **For Mac:** Open the terminal and type `python3 --version`. If it asks you to install developer tools, click Install! Or download it from the python page.
+
+### 📍 Step 2: Download the Code Folder
+*   **Option A (For beginners):** Click the green **Code** button at the top right of this web page, then click **Download ZIP**. Extract the downloaded ZIP folder to your Desktop!
+*   **Option B (For git users):** Clone the repository via terminal:
+    ```bash
+    git clone https://github.com/saitejabandaru-in/AI-Data-Science-Resources.git
+    cd AI-Data-Science-Resources
+    ```
+
+### 📍 Step 3: Open Your Command Terminal (The Control Room)
+The terminal is a text control room where you type commands to your computer:
+*   **On Windows:** Click your Start button, search for **cmd** (Command Prompt), and click to open it.
+*   **On Mac/Linux:** Press `Command + Space` (or search applications), type **Terminal**, and press Enter.
+
+### 📍 Step 4: Navigate to the Folder
+Type the following command into your terminal and press Enter to go inside the folder:
+```bash
+cd Desktop/AI-Data-Science-Resources-main
+```
+*(If you cloned the repo using git in Step 2, you just need to type `cd AI-Data-Science-Resources`!)*
+
+### 📍 Step 5: Start the Games & Quizzes!
+Now, type any of these commands and press Enter to run our interactive labs:
+*   **Run the RPG Quest Log:**
+    ```bash
+    python3 scripts/study_quest.py
+    ```
+*   **Run the Certification Quiz Arena:**
+    ```bash
+    python3 scripts/quiz_generator.py
+    ```
+*   **Run the Performance Benchmark Lab:**
+    ```bash
+    python3 scripts/benchmark_lab.py
+    ```
+*   **Run the Visual Neural Network Simulator:**
+    ```bash
+    python3 scripts/nn_simulator.py
+    ```
+
+---
+
+## 🏆 The Graduation Quest: How to Get Certified
+
+Once you have read the notes in each quest folder, you can enter the **Certification Arena** by running the quiz script!
+
+<p align="center">
+  <img src="assets/certificate_mockup.png" width="550" alt="Authorized Certificate of Achievement" />
+</p>
+
+### 🎖️ How to Earn Your Certificate:
+1. **Pass the Quiz**: Run `python3 scripts/quiz_generator.py` and answer the 9 questions.
+2. **Score Required**: You must get **8 out of 9** correct answers.
+3. **Earn the Rewards**: Once you score 8/9 or higher:
+   * **Custom Certificate File (`CERTIFICATE.md`)**: Created automatically inside your folder, customized with your name, date, and score!
+   * **Verification Badge (`AI_Data_Science_Badge.svg`)**: A glowing digital SVG badge created in your folder!
+   * **LinkedIn Integration**: The terminal will print a special **Add to Profile** link. Click it, and it will automatically fill out the certificate form on LinkedIn so you can add it to your profile with one click!
+
+### 🌟 Benefits of Your Certificate:
+* **Authorized & Issued by saitejabandaru.com**: Your certificate is officially issued by **saitejabandaru.com** and authorized/signed by **Sai Teja Bandaru** (Founder & Instructor).
+* **LinkedIn Ready**: Add it to your LinkedIn profile under "Licenses & Certifications" to show teachers, universities, and future employers that you mastered the fundamentals!
+* **Share Everywhere**: Share the glowing badge on Twitter, GitHub, or print the certificate to hang on your wall!
+
+> ⚠️ **Disclaimer Note:** This certificate is documentation of course completion and self-paced study validation for an open-source learning path. It does not constitute a formal academic degree, professional license, or accredited credential from any university, legal authority, or licensing body.
+
+---
+
+## 🧸 Intuitive Concept Analogies
+
+Data Science and AI can sound like a different language. To help you learn, **every folder in this repository features an intuitive analogy section** that uses simple real-world comparisons to explain complex topics before diving into the advanced code and math.
 
 ---
 
@@ -155,96 +221,6 @@ Here is a curated compilation of the absolute best free courses, textbooks, data
 
 ---
 
-## 🎮 Interactive CLI Labs & Simulators
-
-This repository is designed to be fully hands-on! We have built three interactive command-line interface (CLI) utilities for you to run in your terminal. They require zero external dependencies to execute!
-
-### 1. 🎓 AI & Data Science Quiz CLI & Certification
-Test your knowledge with conceptual multiple-choice questions on SQL, Python, and Machine Learning.
-*   **Run command:**
-    ```bash
-    python3 scripts/quiz_generator.py
-    ```
-*   **Features:** Score tracking, randomized orders, and immediate detailed conceptual answers.
-
-### 2. ⚡ Scientific Computing Performance Lab
-Compare execution times between traditional Python loops, Pandas `.apply()`, Pandas vectorized arithmetic, and Polars. See Rust performance in action!
-*   **Run command:**
-    ```bash
-    python3 scripts/benchmark_lab.py
-    ```
-*   **Features:** Simulates 100,000 transaction rows and builds a real-time execution speeds leaderboard.
-
-### 3. 🧠 Visual Neural Network Perceptron Simulator
-Watch a single artificial neuron learn logical gates (AND/OR) right in your terminal.
-*   **Run command:**
-    ```bash
-    python3 scripts/nn_simulator.py
-    ```
-*   **Features:** Animated ASCII grid visualization showing the linear decision boundary shifting and rotating in real-time as training weights adjust.
-
----
-
-## 🧭 How to Use This Repository (For Absolute Beginners & Kids!)
-
-If you have never coded before and have no idea what a "repository" or "terminal" is, do not worry! Here is a simple, step-by-step guide to help you run the game.
-
-### 📍 Step 1: Download Python (The Magic Engine)
-Python is the engine that runs our games. We need to install it on your computer:
-*   **For Windows:** Go to the [Official Python Download Page](https://www.python.org/downloads/), click the big yellow **Download Python** button, open the downloaded file, and **make sure you check the box that says "Add Python.exe to PATH"** before clicking Install.
-*   **For Mac:** Open the terminal and type `python3 --version`. If it asks you to install developer tools, click Install! Or download it from the python page.
-
-### 📍 Step 2: Download the Code Folder
-*   Look at the top right of this web page. Click the green **Code** button, and click **Download ZIP**.
-*   This will download a file called `AI-Data-Science-Resources-main.zip`. 
-*   Double-click it to extract it. You will get a folder called `AI-Data-Science-Resources-main`. Move it to your Desktop!
-
-### 📍 Step 3: Open Your Command Terminal (The Control Room)
-The terminal is a text control room where you type commands to your computer:
-*   **On Windows:** Click your Start button, search for **cmd** (Command Prompt), and click to open it.
-*   **On Mac:** Press `Command + Space` on your keyboard, type **Terminal**, and press Enter.
-
-### 📍 Step 4: Navigate to the Folder
-Type the following command into your terminal and press Enter:
-```bash
-cd Desktop/AI-Data-Science-Resources-main
-```
-*(If the folder name is different, type `cd ` and drag the folder from your desktop directly into the terminal window, then press Enter!)*
-
-### 📍 Step 5: Start the Game!
-Now, type this command and press Enter:
-```bash
-python3 scripts/quiz_generator.py
-```
-The game will start! You will see question 1 appear. Use your keyboard numbers to pick answers.
-
----
-
-## 🏆 The Graduation Quest: How to Get Certified
-
-Once you have read the notes in each quest folder, you can enter the **Certification Arena** by running the quiz script!
-
-<p align="center">
-  <img src="assets/certificate_mockup.png" width="550" alt="Authorized Certificate of Achievement" />
-</p>
-
-### 🎖️ How to Earn Your Certificate:
-1. **Pass the Quiz**: Answer the 9 conceptual questions.
-2. **Score Required**: You must get **8 out of 9** correct answers.
-3. **Earn the Rewards**: Once you score 8/9 or higher:
-   * **Custom Certificate File (`CERTIFICATE.md`)**: Created automatically inside your folder, customized with your name, date, and score!
-   * **Verification Badge (`AI_Data_Science_Badge.svg`)**: A glowing digital SVG badge created in your folder!
-   * **LinkedIn Integration**: The terminal will print a special **Add to Profile** link. Click it, and it will automatically fill out the certificate form on LinkedIn so you can add it to your profile with one click!
-
-### 🌟 Benefits of Your Certificate:
-* **Authorized & Issued by saitejabandaru.com**: Your certificate is officially issued by **saitejabandaru.com** and authorized/signed by **Sai Teja Bandaru** (Founder & Instructor).
-* **LinkedIn Ready**: Add it to your LinkedIn profile under "Licenses & Certifications" to show teachers, universities, and future employers that you mastered the fundamentals!
-* **Share Everywhere**: Share the glowing badge on Twitter, GitHub, or print the certificate to hang on your wall!
-
-> ⚠️ **Disclaimer Note:** This certificate is documentation of course completion and self-paced study validation for an open-source learning path. It does not constitute a formal academic degree, professional license, or accredited credential from any university, legal authority, or licensing body.
-
----
-
 ## ❓ Frequently Asked Questions (FAQ) - Career & Study Compass
 
 ### What is the best roadmap to become a Machine Learning Engineer (MLE)?
@@ -261,12 +237,7 @@ Begin by studying the transformer self-attention mechanism from the paper "Atten
 
 ---
 
-## 🤝 How to Use & Contribute
+## 🤝 How to Contribute
 
-1.  **Clone the Repository:**
-    ```bash
-    git clone https://github.com/saitejabandaru-in/AI-Data-Science-Resources.git
-    cd AI-Data-Science-Resources
-    ```
-2.  **Star the Repository:** If you find these notes helpful, drop a ⭐️ to help others discover them!
-3.  **Propose Changes:** Found an issue or want to add a note? Create an issue or submit a pull request.
+If you find these notes helpful, drop a ⭐️ to help others discover them! Found an issue, typo, or want to add a note? Feel free to create an issue or submit a pull request!
+
