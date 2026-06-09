@@ -1,7 +1,10 @@
-# 🧠 Machine Learning & Deep Learning Notes
+# 🧠 Quest 3: The Cathedral of Learning
+
+<p align="center">
+  <img src="../assets/ml_quest_banner.png" width="700" alt="Machine Learning Quest Banner" />
+</p>
 
 <!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing
-<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
@@ -14,10 +17,11 @@
   },
   "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/machine-learning"
 }
-</script>
 -->
 
-A comprehensive guide from statistical machine learning foundations to deep neural architectures and state-of-the-art Generative AI (LLMs, RAG).
+You enter the echoing chambers of the **Cathedral of Learning**. Floating neon matrices, loss vectors, and weight distributions glow in the dim vaults. This is the heart of the Archive.
+
+To master this temple, you must grasp optimization calculus, train deep networks via Backpropagation, sculpt Transformer attention vectors, and build Retrieval-Augmented Generation (RAG) pipelines.
 
 ---
 

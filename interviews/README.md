@@ -1,7 +1,10 @@
-# 💼 Interview Prep & Case Studies
+# 💼 Quest 4: The Colosseum of Interviews
+
+<p align="center">
+  <img src="../assets/interview_quest_banner.png" width="700" alt="Interview Quest Banner" />
+</p>
 
 <!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing
-<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
@@ -14,10 +17,11 @@
   },
   "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/interviews"
 }
-</script>
 -->
 
-A structured prep guide featuring high-yield questions, clean coding implementations, and blueprints for machine learning system design interviews.
+Welcome to the digital **Colosseum of Interviews**. This is where your theory is tested in direct combat. The arena demands speed, elegance, and architectural wisdom. 
+
+To survive the trials, you must solve high-yield algorithmic challenges, write robust queries under pressure, and architect scalable end-to-end Machine Learning Systems.
 
 ---
 

@@ -1,7 +1,10 @@
-# 🐍 Python & Scientific Computing
+# 🐍 Quest 2: The Serpent's Catalyst
+
+<p align="center">
+  <img src="../assets/python_quest_banner.png" width="700" alt="Python Quest Banner" />
+</p>
 
 <!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing
-<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
@@ -14,10 +17,11 @@
   },
   "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/python"
 }
-</script>
 -->
 
-Python is the lingua franca of data engineering, machine learning, and AI research. This module details core language concepts, Object-Oriented Programming (OOP), advanced execution patterns, and performance tuning techniques for large-scale data manipulation.
+Deep in the digital labs, you encounter the legendary **Serpent of Computation**. But the Serpent is sluggish, slowed down by the heavy chains of loop cycles and the Global Interpreter Lock (GIL). 
+
+To catalyze the Serpent's energy, you must construct type-safe OOP architectures, master advanced Generator flows, and harness the lightning-fast, multi-threaded Rust engine of **Polars** to achieve 100x performance gains.
 
 ---
 

@@ -1,7 +1,10 @@
-# 🛤️ Data Science & AI Roadmaps
+# 🛤️ Quest 6: The Cartographer's Guild
+
+<p align="center">
+  <img src="../assets/roadmaps_quest_banner.png" width="700" alt="Roadmaps Quest Banner" />
+</p>
 
 <!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing
-<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
@@ -14,10 +17,11 @@
   },
   "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/roadmaps"
 }
-</script>
 -->
 
-Detailed milestone roadmaps for three major industry roles: Machine Learning Engineer, Data Scientist, and Data Analyst.
+Welcome to the **Cartographer's Guild**. Here, we design the maps for your long journey ahead. You must choose your character class: will you take the path of the **Machine Learning Engineer** (focused on model operations and systems), the **Data Scientist** (diving into modeling and experimentation), or the **Data Analyst** (interpreting data flows and business metrics)?
+
+The skill trees and milestones are plotted below. Chart your course!
 
 ---
 

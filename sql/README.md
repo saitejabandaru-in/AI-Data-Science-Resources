@@ -1,7 +1,10 @@
-# 📊 SQL Core & Advanced Notes
+# 📊 Quest 1: The Gates of Query Haven
+
+<p align="center">
+  <img src="../assets/sql_quest_banner.png" width="700" alt="SQL Quest Banner" />
+</p>
 
 <!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing
-<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
@@ -14,10 +17,11 @@
   },
   "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/sql"
 }
-</script>
 -->
 
-SQL is the foundational language of data retrieval, transformation, and analysis. This module covers core relational engine concepts, advanced window functions, and query optimization strategies crucial for database engineering and data science.
+You stand before the humming neon columns of **Query Haven**. The gatekeeper—a strict, highly optimized database relational engine—refuses entry to anyone who queries inefficiently. 
+
+To bypass the gatekeeper, you must master the path that records take through the engine, execute operations using the scroll of Window Functions, and tune your retrieval structures using Indexes.
 
 ---
 

@@ -1,7 +1,10 @@
-# 🔬 Academic Research Compass
+# 🔬 Quest 5: The Scroll of Seminal Whispers
+
+<p align="center">
+  <img src="../assets/research_quest_banner.png" width="700" alt="Research Quest Banner" />
+</p>
 
 <!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing
-<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
@@ -14,10 +17,11 @@
   },
   "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources/tree/main/research-resources"
 }
-</script>
 -->
 
-To stay at the forefront of AI and Data Science, reading and synthesizing academic literature is essential. This module features a curated list of foundational papers, tools, and a structured reading methodology.
+You step into the dimly lit, glowing vault of the **Scroll of Seminal Whispers**. Floating holographic publications and seminal research reports line the walls. 
+
+To read these glyphs, you must master the structured **Three-Pass Method**, learn to browse digital index repositories, and explore the foundational papers that birthed modern machine learning.
 
 ---
 
