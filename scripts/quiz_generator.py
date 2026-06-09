@@ -149,8 +149,8 @@ def generate_svg_badge(name, date_str):
     <text x="300" y="245" font-family="'Inter', 'Helvetica', sans-serif" font-size="16" fill="#E6EEF3" font-weight="bold" text-anchor="middle">SQL, Python, &amp; Machine Learning Curriculum</text>
     
     <!-- Details & Verification -->
-    <text x="75" y="315" font-family="'Inter', 'Helvetica', sans-serif" font-size="11" fill="#9CA3AF" text-anchor="start">ISSUED BY:</text>
-    <text x="75" y="335" font-family="'Inter', 'Helvetica', sans-serif" font-size="12" fill="#E6EEF3" font-weight="bold" text-anchor="start">AI &amp; Data Science Resources</text>
+    <text x="75" y="315" font-family="'Inter', 'Helvetica', sans-serif" font-size="11" fill="#9CA3AF" text-anchor="start">AUTHORIZED BY:</text>
+    <text x="75" y="335" font-family="'Inter', 'Helvetica', sans-serif" font-size="12" fill="#E6EEF3" font-weight="bold" text-anchor="start">Sai Teja Bandaru</text>
     
     <text x="525" y="315" font-family="'Inter', 'Helvetica', sans-serif" font-size="11" fill="#9CA3AF" text-anchor="end">DATE COMPLETED:</text>
     <text x="525" y="335" font-family="'Inter', 'Helvetica', sans-serif" font-size="12" fill="#E6EEF3" font-weight="bold" text-anchor="end">{date_str}</text>
@@ -173,6 +173,7 @@ def generate_markdown_certificate(name, date_str):
 
 Presented to: **{name}**  
 Date of Achievement: **{date_str}**
+Authorized & Signed By: **Sai Teja Bandaru**
 
 ---
 
@@ -183,6 +184,7 @@ Date of Achievement: **{date_str}**
 
 ### 🛡️ Verified Achievement
 This certificate verifies successful completion of the comprehensive technical examination hosted at [saitejabandaru-in/AI-Data-Science-Resources](https://github.com/saitejabandaru-in/AI-Data-Science-Resources).
+Authorized and signed by **Sai Teja Bandaru** (Founder & Lead AI Scientist).
 
 ---
 <div align="center">
