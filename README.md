@@ -2,6 +2,23 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4F7CAC,100:1C2B36&height=220&section=header&text=AI%20Data%20Science%20Resources&fontSize=38&fontColor=E6EEF3&animation=fadeIn&fontAlignY=35&desc=Theory%20•%20Coding%20•%20Quizzes%20•%20Interviews%20•%20Roadmaps&descAlignY=55" />
 </p>
 
+<!-- JSON-LD Structured Data for Search Engine & AI Crawler Indexing -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "AI & Data Science Core Curriculum and Roadmaps",
+  "description": "A comprehensive personal knowledge repository featuring free machine learning engineer roadmaps, advanced SQL interview queries, Python data engineering benchmarks, academic paper summaries, and interactive terminal study quests.",
+  "educationalLevel": "Beginner to Advanced",
+  "learningResourceType": "Roadmap / Study Guide",
+  "author": {
+    "@type": "Person",
+    "name": "Sai Teja Bandaru"
+  },
+  "url": "https://github.com/saitejabandaru-in/AI-Data-Science-Resources"
+}
+</script>
+
 <div align="center">
 
 ![GitHub License](https://img.shields.io/github/license/saitejabandaru-in/AI-Data-Science-Resources?style=for-the-badge&color=blue)
@@ -73,15 +90,15 @@ mindmap
 
 ---
 
-## 🗺️ Table of Contents
+## 🗺️ Search-Indexed Table of Contents
 
-- [📊 SQL Core & Advanced Notes](./sql/README.md) - CTEs, Window Functions, Query Execution, Indexing, and Optimization.
-- [🐍 Python & Scientific Computing](./python/README.md) - Advanced Patterns, Memory/Speed Profiling, NumPy, Pandas, and Polars.
-- [🧠 Machine Learning & Deep Learning](./machine-learning/README.md) - ML Math, Core Algorithms, Deep Learning, Transformers, LLMs, and RAG.
-- [💼 Interview Prep & Case Studies](./interviews/README.md) - Algorithmic Coding, SQL Scenarios, and ML System Design.
-- [🔬 Academic Research Compass](./research-resources/README.md) - Seminal Papers Tracker, Reading Methodologies, and Databases.
-- [🛤️ Career Roadmaps](./roadmaps/README.md) - Role-specific career flowcharts (MLE, DS, Analyst) in Mermaid.
-- [🎮 Interactive Knowledge Quiz](./scripts/quiz_generator.py) - Terminal-based CLI review tool for testing your skills.
+- [📊 Free Advanced SQL Study Notes](./sql/README.md) - CTEs, Window Functions, Query Execution, Indexing, and Optimization.
+- [🐍 High-Performance Python & Scientific Computing Notes](./python/README.md) - Advanced Patterns, Memory/Speed Profiling, NumPy, Pandas, and Polars.
+- [🧠 Machine Learning Math & Deep Learning Notes](./machine-learning/README.md) - ML Math, Core Algorithms, Deep Learning, Transformers, LLMs, and RAG.
+- [💼 Data Science & ML System Design Interview Preparation](./interviews/README.md) - Algorithmic Coding, SQL Scenarios, and ML System Design.
+- [🔬 Academic Research Compass & Seminal AI Papers Tracker](./research-resources/README.md) - Seminal Papers Tracker, Reading Methodologies, and Databases.
+- [🛤️ Career Roadmaps for Data Scientists & ML Engineers](./roadmaps/README.md) - Role-specific career flowcharts (MLE, DS, Analyst) in Mermaid.
+- [🎮 Interactive Study Quiz & Certification Engine](./scripts/quiz_generator.py) - Terminal-based CLI review tool for testing your skills.
 
 ---
 
@@ -114,19 +131,11 @@ Here is a curated compilation of the absolute best free courses, textbooks, data
 
 ---
 
-## 🎮 Gamified Study Companion & Interactive CLI Labs
+## 🎮 Interactive CLI Labs & Simulators
 
-This repository isn't just text—it is an **interactive learning game**! Run the companion RPG or our dedicated scientific labs directly in your terminal with zero external dependencies required.
+This repository is designed to be fully hands-on! We have built three interactive command-line interface (CLI) utilities for you to run in your terminal. They require zero external dependencies to execute!
 
-### ⚔️ 1. AI & Data Science Study Quest RPG
-Track your learning progress as a role-playing game! Complete quests, earn XP, level up, check in daily, and climb the leaderboard alongside famous AI pioneers.
-*   **Run command:**
-    ```bash
-    python3 scripts/study_quest.py
-    ```
-*   **Features:** Progress saving (`.study_quest.json`), Quest board mapped to our study modules, knowledge check-in milestones, and achievements.
-
-### 2. 🎓 AI & Data Science Quiz CLI & Certification
+### 1. 🎓 AI & Data Science Quiz CLI & Certification
 Test your knowledge with conceptual multiple-choice questions on SQL, Python, and Machine Learning.
 *   **Run command:**
     ```bash
@@ -135,7 +144,7 @@ Test your knowledge with conceptual multiple-choice questions on SQL, Python, an
 *   **Features:** Score tracking, randomized orders, and immediate detailed conceptual answers.
 *   **🎓 Earn a LinkedIn Badge:** Scoring 8/9 or higher prompts the generator to create a personalized, modern SVG badge (`AI_Data_Science_Badge.svg`) and a verification document (`CERTIFICATE.md`) directly in your repository folder, along with a click-to-add link to showcase your certification on LinkedIn!
 
-### 3. ⚡ Scientific Computing Performance Lab
+### 2. ⚡ Scientific Computing Performance Lab
 Compare execution times between traditional Python loops, Pandas `.apply()`, Pandas vectorized arithmetic, and Polars. See Rust performance in action!
 *   **Run command:**
     ```bash
@@ -143,13 +152,29 @@ Compare execution times between traditional Python loops, Pandas `.apply()`, Pan
     ```
 *   **Features:** Simulates 100,000 transaction rows and builds a real-time execution speeds leaderboard.
 
-### 4. 🧠 Visual Neural Network Perceptron Simulator
+### 3. 🧠 Visual Neural Network Perceptron Simulator
 Watch a single artificial neuron learn logical gates (AND/OR) right in your terminal.
 *   **Run command:**
     ```bash
     python3 scripts/nn_simulator.py
     ```
 *   **Features:** Animated ASCII grid visualization showing the linear decision boundary shifting and rotating in real-time as training weights adjust.
+
+---
+
+## ❓ Frequently Asked Questions (FAQ) - Career & Study Compass
+
+### What is the best roadmap to become a Machine Learning Engineer (MLE)?
+To become an ML Engineer, start with Python programming, linear algebra, and calculus. Progress to classical machine learning (using libraries like Scikit-Learn and XGBoost), then deep learning (PyTorch), and finally master model deployment, MLOps, and scalable pipelines (Docker, FastAPI, Triton). You can follow our step-by-step visual roadmap guide in the [Visual Career Roadmaps module](./roadmaps/README.md).
+
+### How can I practice SQL for Data Science and Data Analyst interviews?
+The best way is to focus on advanced queries involving multi-table joins, subqueries, common table expressions (CTEs), and window functions. Practice writing queries for growth metrics, running totals, and consecutive login streaks (Gaps and Islands). Access our curated bank of [Advanced SQL Interview Questions & Answers](./interviews/README.md) for direct preparation.
+
+### Why should I choose Polars over Pandas for scientific computing?
+Polars is written in Rust and utilizes parallel execution and lazy evaluation, which optimizes query plans before execution. Unlike Pandas, Polars bypasses Python's Global Interpreter Lock (GIL), resulting in speeds up to 100x faster for large datasets. Run our [Scientific Performance Benchmark Lab](./scripts/benchmark_lab.py) to measure the speedup on your own computer.
+
+### How do I learn Generative AI, LLMs, and RAG?
+Begin by studying the transformer self-attention mechanism from the paper "Attention Is All You Need". Next, understand Parameter-Efficient Fine-Tuning (PEFT/LoRA) and Retrieval-Augmented Generation (RAG) pipelines. Dive into the complete conceptual guide inside our [Machine Learning & Deep Learning module](./machine-learning/README.md).
 
 ---
 
@@ -162,4 +187,3 @@ Watch a single artificial neuron learn logical gates (AND/OR) right in your term
     ```
 2.  **Star the Repository:** If you find these notes helpful, drop a ⭐️ to help others discover them!
 3.  **Propose Changes:** Found an issue or want to add a note? Create an issue or submit a pull request.
-
