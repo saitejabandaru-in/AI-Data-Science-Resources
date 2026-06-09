@@ -151,6 +151,10 @@ document.addEventListener('DOMContentLoaded', () => {
         initNeuralNet();
       } else if (tabName === 'benchmarks') {
         drawBenchmarkChart();
+      } else if (tabName === 'chatbot') {
+        initChatbot();
+      } else if (tabName === 'sqlplanner') {
+        initSqlPlanner();
       }
     });
   });
@@ -680,4 +684,333 @@ function drawBenchmarkChart() {
     ctx.font = '600 12px Outfit, sans-serif';
     ctx.fillText(eng.name, barX + colWidth / 2, chartHeight + 52);
   });
+}
+
+// ========================================================
+// 💬 CHATBOT TUTOR LOGIC
+// ========================================================
+const KNOWLEDGE_BASE = [
+  {
+    keywords: ["sql", "execution", "order", "where", "group", "select", "logical"],
+    text: "In SQL, the logical execution order of clauses is: FROM -> JOIN -> WHERE -> GROUP BY -> HAVING -> SELECT -> DISTINCT -> ORDER BY -> LIMIT. Crucially, SELECT is run AFTER GROUP BY and HAVING, which is why column aliases declared in SELECT cannot be referenced in WHERE."
+  },
+  {
+    keywords: ["window", "function", "rank", "dense", "row", "ties", "gaps"],
+    text: "SQL Window Functions perform calculations across a set of table rows related to the current row. ROW_NUMBER() assigns a unique number to all rows. RANK() assigns ties the same rank but leaves gaps (e.g. 1, 2, 2, 4). DENSE_RANK() assigns ties the same rank without gaps (e.g. 1, 2, 2, 3)."
+  },
+  {
+    keywords: ["index", "gin", "jsonb", "array", "postgres", "inverted"],
+    text: "In PostgreSQL, GIN (Generalized Inverted Index) is the most suitable index type for multi-value elements like JSONB or Array columns. It allows fast indexing of sub-keys and elements inside document structures, unlike standard B-Trees which index the entire field."
+  },
+  {
+    keywords: ["set", "python", "complexity", "hash", "constant", "search"],
+    text: "Python sets are implemented as hash tables. Searching for an element using the 'in' operator ('element in set') has an average time complexity of O(1) constant time, compared to Python lists which have O(N) linear time."
+  },
+  {
+    keywords: ["decorator", "wraps", "functools", "preserve", "metadata", "name"],
+    text: "The @functools.wraps decorator is used when writing custom decorators in Python. It copies the original function's metadata (like its name and docstring) onto the wrapped version, preventing them from being overwritten by the wrapper's name."
+  },
+  {
+    keywords: ["pandas", "polars", "vectorization", "speed", "rust", "parallel"],
+    text: "Polars is written in native Rust and runs up to 300x faster than Pandas. It achieves this by bypassing the Python GIL, utilizing multi-threaded parallel execution across all CPU cores, and optimizing query execution plans lazily before running them."
+  },
+  {
+    keywords: ["overfitting", "regularization", "l1", "l2", "lasso", "ridge"],
+    text: "L1 regularization (Lasso) adds the absolute sum of weights as a penalty, which can shrink weights exactly to zero, serving as feature selection. L2 regularization (Ridge) adds the squared sum of weights, shrinking weights near zero but never exactly to zero."
+  },
+  {
+    keywords: ["self-attention", "attention", "formula", "scale", "dimension", "softmax"],
+    text: "The Transformer self-attention formula is Softmax(QK^T / sqrt(d_k))V. We divide by the square root of the key dimension (d_k) to prevent dot-products from growing extremely large, which saturates the softmax function and leads to vanishing gradients."
+  },
+  {
+    keywords: ["imbalanced", "dataset", "roc-auc", "pr-auc", "metric", "roc", "precision"],
+    text: "On highly imbalanced datasets (e.g. rare anomalies), Precision-Recall AUC (PR-AUC) is preferred over ROC-AUC. ROC-AUC is distorted by large True Negative counts, whereas PR-AUC isolates Precision and Recall, focusing purely on positive class performance."
+  },
+  {
+    keywords: ["rag", "retrieval", "augmented", "generation", "pipeline", "steps"],
+    text: "A Retrieval-Augmented Generation (RAG) pipeline operates in five key steps: Document chunking -> Vector embedding generation -> Indexing into a Vector DB -> Semantic retrieval of context using cosine similarity -> LLM prompt generation using retrieved context."
+  },
+  {
+    keywords: ["certificate", "badge", "graduation", "pass", "quiz", "linkedin"],
+    text: "To earn your graduation certificate, pass the Quiz Arena with a score of 8/9 or higher. The quiz CLI tool will automatically generate a custom SVG badge, a certified CERTIFICATE.md file, and print a custom one-click LinkedIn Add button."
+  }
+];
+
+let chatInput, chatMessages, sendBtn;
+
+function initChatbot() {
+  chatInput = document.getElementById('chat-input-field');
+  chatMessages = document.getElementById('chat-messages-container');
+  sendBtn = document.getElementById('chat-send-btn');
+  
+  if (sendBtn) {
+    sendBtn.onclick = handleChatSend;
+  }
+}
+
+// Attach these to window object so inline HTML event handlers can resolve them
+window.sendSuggestedChat = function(text) {
+  if (chatInput) {
+    chatInput.value = text;
+    handleChatSend();
+  }
+};
+
+window.handleChatKey = function(event) {
+  if (event.key === 'Enter') {
+    handleChatSend();
+  }
+};
+
+function handleChatSend() {
+  if (!chatInput) return;
+  const text = chatInput.value.trim();
+  if (!text) return;
+  
+  // Render user message
+  renderMessage(text, 'user');
+  chatInput.value = '';
+  
+  // Typing state for tutor
+  const typingBubble = document.createElement('div');
+  typingBubble.className = 'chat-message tutor typing';
+  typingBubble.textContent = 'Thinking...';
+  chatMessages.appendChild(typingBubble);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+  
+  // Simulate retrieval and response delay
+  setTimeout(() => {
+    chatMessages.removeChild(typingBubble);
+    const response = processRAGTutor(text);
+    renderMessageWithTyping(response, 'tutor');
+  }, 750);
+}
+
+function renderMessage(text, sender) {
+  const msg = document.createElement('div');
+  msg.className = `chat-message ${sender}`;
+  msg.innerHTML = sender === 'user' ? `👤 <strong>You:</strong> ${text}` : text;
+  chatMessages.appendChild(msg);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function renderMessageWithTyping(fullText, sender) {
+  const msg = document.createElement('div');
+  msg.className = `chat-message ${sender}`;
+  chatMessages.appendChild(msg);
+  
+  let i = 0;
+  // Typewriter effect
+  function typeWriter() {
+    if (i < fullText.length) {
+      msg.innerHTML = `🤖 <strong>AI Tutor:</strong> ` + fullText.substring(0, i + 1);
+      i++;
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      setTimeout(typeWriter, 12);
+    }
+  }
+  typeWriter();
+}
+
+function processRAGTutor(query) {
+  const tokens = query.toLowerCase().replace(/[^\w\s]/g, '').split(/\s+/);
+  
+  let bestMatch = null;
+  let highestScore = 0;
+  
+  KNOWLEDGE_BASE.forEach(fact => {
+    let score = 0;
+    tokens.forEach(tok => {
+      if (fact.keywords.includes(tok)) {
+        score++;
+      }
+    });
+    
+    if (score > highestScore) {
+      highestScore = score;
+      bestMatch = fact;
+    }
+  });
+  
+  if (highestScore > 0 && bestMatch) {
+    return `${bestMatch.text}\n\n*(Retrieved from the Grand Archive Knowledge Base - Match confidence: ${highestScore} matches)*`;
+  }
+  
+  return "I apologize, Initiate. I couldn't find a direct match in our Grand Archive syllabus facts for your query. Try asking about 'SQL Order', 'Polars speed', 'Self-attention', or 'L1 vs L2 regularization'!";
+}
+
+
+// ========================================================
+// 🔍 VISUAL SQL PLANNER LOGIC
+// ========================================================
+let plannerCanvas, plannerCtx;
+let plannerIsOptimized = false;
+
+const PLAN_TEMPLATES = {
+  "1": {
+    costUnopt: "145.20",
+    costOpt: "4.15",
+    explUnopt: "Initial Strategy: Performs a slow Sequential Table Scan (O(N) time) checking every user row, followed by an in-memory filter filtering for age > 21.",
+    explOpt: "Optimized Strategy: Rewrites execution plan to utilize the 'users_age_idx' index. Loads matching row pointers directly in O(log N) time, skipping full table scans.",
+    draw: function(ctx, w, h, optimized) {
+      const centerX = w / 2;
+      drawNodeBox(ctx, centerX, 60, "Project (users.name)", "#4F7CAC");
+      drawConnector(ctx, centerX, 80, centerX, 130);
+      
+      if (!optimized) {
+        drawNodeBox(ctx, centerX, 150, "Filter (age > 21)", "#4F7CAC");
+        drawConnector(ctx, centerX, 170, centerX, 220);
+        drawNodeBox(ctx, centerX, 240, "Seq Scan on users", "#EF4444");
+      } else {
+        drawNodeBox(ctx, centerX, 150, "Index Scan (age > 21)", "#99E2B4");
+        drawConnector(ctx, centerX, 170, centerX, 220);
+        drawNodeBox(ctx, centerX, 240, "Fetch users (via index ptr)", "#4F7CAC");
+      }
+    }
+  },
+  "2": {
+    costUnopt: "890.50",
+    costOpt: "18.30",
+    explUnopt: "Initial Strategy: Runs a slow O(N*M) Nested Loop Join. For every row in 'users', the engine executes a full table scan across the entire 'orders' dataset to find matching user_ids.",
+    explOpt: "Optimized Strategy: Pulls filters down first. Rewrites execution plan to build a Hash Map of 'users' in memory, then streams 'orders' through to scan matching rows in O(N+M) time.",
+    draw: function(ctx, w, h, optimized) {
+      const centerX = w / 2;
+      drawNodeBox(ctx, centerX, 50, "Project (u.name, o.amt)", "#4F7CAC");
+      drawConnector(ctx, centerX, 70, centerX, 120);
+      
+      if (!optimized) {
+        drawNodeBox(ctx, centerX, 140, "Nested Loop Join", "#EF4444");
+        drawConnector(ctx, centerX, 160, centerX - 100, 210);
+        drawConnector(ctx, centerX, 160, centerX + 100, 210);
+        drawNodeBox(ctx, centerX - 100, 230, "Seq Scan on users", "#EF4444");
+        drawNodeBox(ctx, centerX + 100, 230, "Seq Scan on orders", "#EF4444");
+      } else {
+        drawNodeBox(ctx, centerX, 140, "Hash Join (O(N+M))", "#99E2B4");
+        drawConnector(ctx, centerX, 160, centerX - 100, 210);
+        drawConnector(ctx, centerX, 160, centerX + 100, 210);
+        drawNodeBox(ctx, centerX - 100, 230, "Hash (users.id)", "#4F7CAC");
+        drawConnector(ctx, centerX - 100, 250, centerX - 100, 300);
+        drawNodeBox(ctx, centerX - 100, 320, "Seq Scan users (small)", "#99E2B4");
+        drawNodeBox(ctx, centerX + 100, 230, "Index Scan on orders", "#99E2B4");
+      }
+    }
+  },
+  "3": {
+    costUnopt: "420.00",
+    costOpt: "55.10",
+    explUnopt: "Initial Strategy: Scans all employees. Sorts the entire table physically by department (O(N log N) time), then runs Group Aggregation to count occurrences.",
+    explOpt: "Optimized Strategy: Employs Hash Aggregation. Instantiates a hash map in-memory to accumulate count buckets directly in a single O(N) pass, bypassing sorting entirely.",
+    draw: function(ctx, w, h, optimized) {
+      const centerX = w / 2;
+      drawNodeBox(ctx, centerX, 60, "Filter (COUNT(*) > 5)", "#4F7CAC");
+      drawConnector(ctx, centerX, 80, centerX, 130);
+      
+      if (!optimized) {
+        drawNodeBox(ctx, centerX, 150, "Sort (employees.dept)", "#EF4444");
+        drawConnector(ctx, centerX, 170, centerX, 220);
+        drawNodeBox(ctx, centerX, 240, "Group Aggregate (COUNT)", "#4F7CAC");
+        drawConnector(ctx, centerX, 260, centerX, 310);
+        drawNodeBox(ctx, centerX, 330, "Seq Scan employees", "#EF4444");
+      } else {
+        drawNodeBox(ctx, centerX, 150, "Hash Aggregate (COUNT)", "#99E2B4");
+        drawConnector(ctx, centerX, 170, centerX, 220);
+        drawNodeBox(ctx, centerX, 240, "Seq Scan employees", "#99E2B4");
+      }
+    }
+  }
+};
+
+function initSqlPlanner() {
+  plannerCanvas = document.getElementById('sqlplanner-canvas');
+  if (!plannerCanvas) return;
+  plannerCtx = plannerCanvas.getContext('2d');
+  
+  document.getElementById('planner-query-select').onchange = () => {
+    plannerIsOptimized = false;
+    updatePlannerUI();
+  };
+  
+  document.getElementById('planner-optimize-btn').onclick = () => {
+    plannerIsOptimized = true;
+    updatePlannerUI();
+  };
+  
+  document.getElementById('planner-reset-btn').onclick = () => {
+    plannerIsOptimized = false;
+    updatePlannerUI();
+  };
+  
+  updatePlannerUI();
+}
+
+function updatePlannerUI() {
+  const queryId = document.getElementById('planner-query-select').value;
+  const template = PLAN_TEMPLATES[queryId];
+  if (!template) return;
+  
+  const elCost = document.getElementById('planner-cost');
+  const elMode = document.getElementById('planner-mode');
+  const elExpl = document.getElementById('planner-explanation-text');
+  
+  if (plannerIsOptimized) {
+    elCost.textContent = template.costOpt;
+    elCost.className = "stat-value text-green";
+    elMode.textContent = "Optimized ⚡";
+    elExpl.textContent = template.explOpt;
+  } else {
+    elCost.textContent = template.costUnopt;
+    elCost.className = "stat-value text-orange";
+    elMode.textContent = "Unoptimized";
+    elExpl.textContent = template.explUnopt;
+  }
+  
+  drawPlannerTree(template);
+}
+
+function drawPlannerTree(template) {
+  if (!plannerCtx) return;
+  const w = plannerCanvas.width;
+  const h = plannerCanvas.height;
+  
+  plannerCtx.clearRect(0, 0, w, h);
+  template.draw(plannerCtx, w, h, plannerIsOptimized);
+}
+
+function drawNodeBox(ctx, x, y, label, color) {
+  const width = 160;
+  const height = 32;
+  const rx = x - width / 2;
+  const ry = y - height / 2;
+  
+  // Shadow
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+  ctx.fillRect(rx + 2, ry + 2, width, height);
+  
+  // Box
+  ctx.fillStyle = '#1C2B36';
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  if (ctx.roundRect) {
+    ctx.roundRect(rx, ry, width, height, 6);
+  } else {
+    ctx.rect(rx, ry, width, height);
+  }
+  ctx.fill();
+  ctx.stroke();
+  
+  // Label text
+  ctx.fillStyle = '#E6EEF3';
+  ctx.font = 'bold 11px Inter, sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(label, x, y + 4);
+}
+
+function drawConnector(ctx, x1, y1, x2, y2) {
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(x1, y1);
+  ctx.lineTo(x2, y2);
+  ctx.stroke();
 }

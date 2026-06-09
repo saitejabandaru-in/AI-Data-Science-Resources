@@ -53,6 +53,12 @@
       <button class="nav-tab" data-tab="benchmarks">
         <span class="tab-icon">📊</span> Benchmarks
       </button>
+      <button class="nav-tab" data-tab="chatbot">
+        <span class="tab-icon">💬</span> Chatbot Tutor
+      </button>
+      <button class="nav-tab" data-tab="sqlplanner">
+        <span class="tab-icon">🔍</span> SQL Planner
+      </button>
       <button class="nav-tab" data-tab="author">
         <span class="tab-icon">👤</span> Author Profile
       </button>
@@ -347,7 +353,89 @@
         </div>
       </section>
 
-      <!-- TAB 5: AUTHOR PROFILE -->
+      <!-- TAB 5: CHATBOT TUTOR -->
+      <section class="tab-content" id="tab-chatbot">
+        <div class="chatbot-layout card">
+          <h2>💬 Interactive AI Tutor Chatbot</h2>
+          <p class="text-muted">Ask the local RAG assistant questions about SQL execution order, functional Python generators, self-attention math, or RAG vectors!</p>
+          
+          <div class="chat-window">
+            <div class="chat-messages" id="chat-messages-container">
+              <div class="chat-message system">
+                🤖 <strong>AI Tutor:</strong> Welcome, Initiate! Ask me anything about the SQL, Python, or Machine Learning paths in this repository.
+              </div>
+            </div>
+            <div class="chat-suggestions">
+              <span class="suggest-chip" onclick="sendSuggestedChat('What is the logical order of SQL queries?')">SQL Order</span>
+              <span class="suggest-chip" onclick="sendSuggestedChat('How does Polars run data operations so quickly?')">Polars Speed</span>
+              <span class="suggest-chip" onclick="sendSuggestedChat('What is the self-attention formula?')">Self-Attention</span>
+              <span class="suggest-chip" onclick="sendSuggestedChat('How does L1 regularization differ from L2?')">L1 vs L2</span>
+            </div>
+            <div class="chat-input-bar">
+              <input type="text" id="chat-input-field" placeholder="Ask a question about the curriculum..." onkeydown="handleChatKey(event)"/>
+              <button class="btn btn-primary" id="chat-send-btn">Send ➡️</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 6: SQL PLANNER -->
+      <section class="tab-content" id="tab-sqlplanner">
+        <div class="sqlplanner-grid">
+          <!-- Planner Diagram -->
+          <div class="planner-sim-card card">
+            <h2>🔍 Visual Database SQL Query Planner</h2>
+            <p>Select a query template below and toggle "Optimize" to watch the database engine parser re-organize the physical scan & join tree on the canvas.</p>
+            
+            <div class="canvas-wrapper">
+              <canvas id="sqlplanner-canvas" width="500" height="400"></canvas>
+            </div>
+
+            <div class="canvas-legend">
+              <span class="legend-item"><span class="node-icon seq-scan"></span> Sequential Scan (Slow)</span>
+              <span class="legend-item"><span class="node-icon index-scan"></span> Index Scan (Fast)</span>
+              <span class="legend-item"><span class="node-icon join-node"></span> Join/Aggregate</span>
+            </div>
+          </div>
+
+          <!-- Controls panel -->
+          <div class="planner-controls-card card">
+            <h3>⚙️ Query Configurations</h3>
+            
+            <div class="control-group">
+              <label for="planner-query-select">Select Query Template:</label>
+              <select id="planner-query-select">
+                <option value="1">Filter Query (SELECT name FROM users WHERE age > 21)</option>
+                <option value="2">Join Query (SELECT * FROM users JOIN orders ON users.id = orders.user_id)</option>
+                <option value="3">Aggregate Query (SELECT dept, COUNT(*) FROM employees GROUP BY dept)</option>
+              </select>
+            </div>
+
+            <div class="planner-stats">
+              <div class="stat-box">
+                <span class="stat-label">Estimated Cost:</span>
+                <span class="stat-value text-orange" id="planner-cost">High</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">Planner Mode:</span>
+                <span class="stat-value" id="planner-mode">Unoptimized</span>
+              </div>
+            </div>
+
+            <div class="control-buttons">
+              <button class="btn btn-primary btn-large" id="planner-optimize-btn">⚡ Optimize Query Plan</button>
+              <button class="btn btn-secondary" id="planner-reset-btn">🔄 Reset Plan</button>
+            </div>
+
+            <div class="planner-explanation card">
+              <h4>📋 Planner Explanation</h4>
+              <p id="planner-explanation-text">Select a query template and click Optimize to analyze the execution strategy.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 7: AUTHOR PROFILE -->
       <section class="tab-content" id="tab-author">
         <div class="card author-outer-card">
           <h2>👤 Meet the Author & Founder</h2>
