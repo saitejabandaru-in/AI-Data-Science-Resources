@@ -163,8 +163,3 @@ Watch a single artificial neuron learn logical gates (AND/OR) right in your term
 2.  **Star the Repository:** If you find these notes helpful, drop a ⭐️ to help others discover them!
 3.  **Propose Changes:** Found an issue or want to add a note? Create an issue or submit a pull request.
 
----
-
-## 📈 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=saitejabandaru-in/AI-Data-Science-Resources&type=Date)](https://star-history.com/#saitejabandaru-in/AI-Data-Science-Resources&Date)
