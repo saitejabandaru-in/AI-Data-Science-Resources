@@ -102,16 +102,33 @@ Here is a curated compilation of the absolute best free courses, textbooks, data
 
 ---
 
-## 🎮 Interactive CLI Quiz Generator
+## 🎮 Interactive CLI Labs & Simulators
 
-Test your knowledge directly in your terminal! We have built a lightweight, interactive quiz command-line utility.
+This repository is designed to be fully hands-on! We have built three interactive command-line interface (CLI) utilities for you to run in your terminal. They require zero external dependencies to execute!
 
-### How to Run:
-```bash
-python3 scripts/quiz_generator.py
-```
-*   **Modes:** Choose between SQL, Python, ML, or Random questions.
-*   **Features:** Interactive scoring, immediate detailed explanations, and visual progress tracking.
+### 1. 🎓 AI & Data Science Quiz CLI
+Test your knowledge with conceptual multiple-choice questions on SQL, Python, and Machine Learning.
+*   **Run command:**
+    ```bash
+    python3 scripts/quiz_generator.py
+    ```
+*   **Features:** Score tracking, randomized orders, and immediate detailed conceptual answers.
+
+### 2. ⚡ Scientific Computing Performance Lab
+Compare execution times between traditional Python loops, Pandas `.apply()`, Pandas vectorized arithmetic, and Polars. See Rust performance in action!
+*   **Run command:**
+    ```bash
+    python3 scripts/benchmark_lab.py
+    ```
+*   **Features:** Simulates 100,000 transaction rows and builds a real-time execution speeds leaderboard.
+
+### 3. 🧠 Visual Neural Network Perceptron Simulator
+Watch a single artificial neuron learn logical gates (AND/OR) right in your terminal.
+*   **Run command:**
+    ```bash
+    python3 scripts/nn_simulator.py
+    ```
+*   **Features:** Animated ASCII grid visualization showing the linear decision boundary shifting and rotating in real-time as training weights adjust.
 
 ---
 
