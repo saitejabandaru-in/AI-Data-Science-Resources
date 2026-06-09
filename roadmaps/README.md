@@ -25,6 +25,13 @@ The skill trees and milestones are plotted below. Chart your course!
 
 ---
 
+> ### 🧚 Once Upon a Time... (A 5-Line Storybook Summary)
+> In the Guild of Cartographers, three pathways lie ahead of you. You can choose to be a Machine Learning Engineer who builds robot models, a Data Scientist who searches for secret facts, or a Data Analyst who creates colorful business charts. This map shows you every checkpoint you need to clear to unlock your skills and become a true hero!
+
+---
+
+---
+
 ## 🗺️ Table of Contents
 1. [Machine Learning Engineer (MLE) / AI Specialist](#1-machine-learning-engineer-mle--ai-specialist)
 2. [Data Scientist (DS)](#2-data-scientist-ds)

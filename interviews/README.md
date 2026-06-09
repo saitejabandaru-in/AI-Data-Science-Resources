@@ -25,6 +25,13 @@ To survive the trials, you must solve high-yield algorithmic challenges, write r
 
 ---
 
+> ### 🧚 Once Upon a Time... (A 5-Line Storybook Summary)
+> In the Colosseum of Challenges, a little bear looks through a cardboard tube telescope to count houses one by one as he walks, saving his energy. When customers enter his massive toy shop, he uses a funnel helper to grab dinosaur toys, sort them by excitement, and show only the best ones. By using these clever tricks, the bear passes every challenge with a big smile!
+
+---
+
+---
+
 ## 🧸 Interview Concepts Intuitive Analogies
 
 *   **Sliding Window Algorithm:** Imagine you are looking at a row of houses through a small cardboard tube. Instead of walking all the way back to the start and recounting every house every time you take a step, you just **slide your tube one house forward**. You only look at the new house that enters the tube on the right, and forget the house that just slid out on the left. This saves a massive amount of time!

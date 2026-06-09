@@ -25,6 +25,13 @@ To master this temple, you must grasp optimization calculus, train deep networks
 
 ---
 
+> ### 🧚 Once Upon a Time... (A 5-Line Storybook Summary)
+> Once there was a little robot puppy who wanted to learn. Instead of reading rules, he looked at thousands of pictures of dogs until he could spot one in the park himself! When he got confused, his friends whispered corrections back along a telephone line to help him adjust. Soon, he could read books in a library to write perfect answers, just like an open-book test!
+
+---
+
+---
+
 ## 🧸 Machine Learning Intuitive Analogies
 
 *   **Machine Learning** is teaching a computer by **showing it examples** instead of writing strict rules. It is like showing a toddler 100 photos of dogs until they can successfully point out a real dog in the park.

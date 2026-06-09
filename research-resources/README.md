@@ -25,6 +25,13 @@ To read these glyphs, you must master the structured **Three-Pass Method**, lear
 
 ---
 
+> ### 🧚 Once Upon a Time... (A 5-Line Storybook Summary)
+> High in a mountain castle, wizards study ancient scrolls containing the secrets of artificial intelligence. Instead of reading every word from start to finish, they look at the titles first, then read the summaries, and finally study the math when they are ready. This scroll guide shows you exactly how to read like a wizard and discover the most famous scrolls in history!
+
+---
+
+---
+
 ## 🗺️ Table of Contents
 1. [Foundational AI & Deep Learning Papers](#1-foundational-ai--deep-learning-papers)
 2. [How to Read a Research Paper (The Three-Pass Method)](#2-how-to-read-a-research-paper-the-three-pass-method)
