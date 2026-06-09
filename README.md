@@ -39,7 +39,9 @@
 > ### 🧚 Once Upon a Time... (A 5-Line Storybook Summary)
 > Once upon a time, in a digital kingdom, there was a vast library of secrets. Inside, SQL was a clever chef who grabbed the right ingredients, Python was a magical snake that helped automate tasks, and Machine Learning was a puppy learning tricks from pictures. This archive is your map to explore these wonders, solve interactive challenges, and earn your golden certificate badge!
 
----
+<p align="center">
+  <img src="assets/hiker_quest_map.png" width="650" alt="Hiker Quest Treasure Map" />
+</p>
 
 ---
 
